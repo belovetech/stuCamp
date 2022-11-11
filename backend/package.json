@@ -1,0 +1,22 @@
+{
+  "name": "stucamp",
+  "version": "1.0.0",
+  "description": "An hostel management platform",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/belovetech/stuCamp.git"
+  },
+  "author": "Abeeb Raheem, Samuel Adebayo, Opeyemi Odebode",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/belovetech/stuCamp/issues"
+  },
+  "homepage": "https://github.com/belovetech/stuCamp#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
