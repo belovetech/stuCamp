@@ -1,5 +1,5 @@
 const dotenv = require('dotenv');
-dotenv.config({ path: './config.env' });
+dotenv.config({ path: './.config.env' });
 const fs = require('fs');
 
 const Hostel = require('../../models/hostelModel');
