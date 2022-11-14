@@ -1,107 +1,79 @@
-const Hostels = require('./../models/hostelModel');
 const APIfeatures = require('./../utils/apifeatures');
+const AppError = require('./../utils/appError');
+const catchAsync = require('./../utils/catchAsync');
+const Hostels = require('./../models/hostelModel');
 
-exports.getAllHostels = async (req, res, next) => {
-  try {
-    const features = new APIfeatures(Hostels.find(), req.query)
-      .filter()
-      .sort()
-      .limitFields()
-      .paginate();
+exports.getAllHostels = catchAsync(async (req, res, next) => {
+  const features = new APIfeatures(Hostels.find(), req.query)
+    .filter()
+    .sort()
+    .limitFields()
+    .paginate();
 
-    const hostels = await features.query;
+  const hostels = await features.query;
 
-    res.status(200).json({
-      status: 'success',
-      results: hostels.length,
-      data: {
-        hostels,
-      },
-    });
-  } catch (err) {
-    res.status(400).json({
-      status: 'fail',
-      message: 'Resources not found',
-    });
+  res.status(200).json({
+    status: 'success',
+    results: hostels.length,
+    data: {
+      hostels,
+    },
+  });
+});
+
+exports.getHostel = catchAsync(async (req, res, next) => {
+  const hostel = await Hostels.findById(req.params.id);
+
+  if (!hostel) {
+    return next(new AppError('Hostel was not found', 404));
   }
-};
 
-exports.getHostel = async (req, res, next) => {
-  try {
-    const hostel = await Hostels.findById(req.params.id);
+  res.status(200).json({
+    status: 'success',
+    data: {
+      hostel,
+    },
+  });
+});
 
-    res.status(200).json({
-      status: 'success',
-      data: {
-        hostel,
-      },
-    });
-  } catch (err) {
-    res.status(404).json({
-      status: 'fail',
-      message: 'Resources not found',
-      stack: err,
-    });
+exports.createHostel = catchAsync(async (req, res, next) => {
+  const hostel = await Hostels.create(req.body);
+
+  res.status(201).json({
+    status: 'success',
+    data: {
+      hostel,
+    },
+  });
+});
+
+exports.updateHostel = catchAsync(async (req, res, next) => {
+  const hostel = await Hostels.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+    runValidators: true,
+  });
+
+  if (!hostel) {
+    return next(new AppError('Hostel was not found', 404));
   }
-};
 
-exports.createHostel = async (req, res, next) => {
-  try {
-    const hostel = await Hostels.create(req.body);
+  res.status(200).json({
+    status: 'success',
+    data: {
+      hostel,
+    },
+  });
+});
 
-    res.status(201).json({
-      status: 'success',
-      data: {
-        hostel,
-      },
-    });
-  } catch (err) {
-    res.status(400).json({
-      status: 'fail',
-      message: 'Bad request',
-      stack: err,
-    });
+exports.deleteHostel = catchAsync(async (req, res, next) => {
+  const hostel = await Hostels.findByIdAndDelete(req.params.id);
+
+  if (!hostel) {
+    return next(new AppError('Hostel was not found', 404));
   }
-};
 
-exports.updateHostel = async (req, res, next) => {
-  try {
-    const hostel = await Hostels.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-      runValidators: true,
-    });
-    if (!hostel) next(err);
-
-    res.status(200).json({
-      status: 'success',
-      data: {
-        hostel,
-      },
-    });
-  } catch (err) {
-    res.status(200).json({
-      status: 'fail',
-      message: 'Resource not found',
-      stack: err,
-    });
-  }
-};
-
-exports.deleteHostel = async (req, res, next) => {
-  try {
-    const hostel = await Hostels.findByIdAndDelete(req.params.id);
-
-    if (!hostel) next(err);
-
-    res.status(200).json({
-      status: 'success',
-      data: null,
-    });
-  } catch (err) {
-    res.status(404).json({
-      status: 'fail',
-      message: 'Resource not found',
-      stack: err,
-    });
-  }
-};
+  res.status(200).json({
+    status: 'success',
+    data: null,
+  });
+});
