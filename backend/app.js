@@ -1,13 +1,17 @@
 const express = require('express');
-const app = express();
-const morgan = express('morgan');
+const morgan = require('morgan');
+
 const hostelRouter = require('./routes/hostelRouter');
 
+// insantiate express app
+const app = express();
+
 // MIDDLEWARES
-app.use(express.json());
-if (process.env.EVV === 'development') {
+if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
+
+app.use(express.json());
 
 app.use('/api/v1/hostels', hostelRouter);
 
