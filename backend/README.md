@@ -59,10 +59,12 @@ Errors are returned as JSON in the following format:
 
 The API will return four types of errors:
 
+```
 400 - bad request
 404 - resource not found
 401 - unauthorized
 500 - internal server error
+```
 
 #### API Endpoints
 
