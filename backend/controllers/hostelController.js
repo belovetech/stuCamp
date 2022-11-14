@@ -1,8 +1,15 @@
 const Hostels = require('./../models/hostelModel');
+const APIfeatures = require('./../utils/apifeatures');
 
 exports.getAllHostels = async (req, res, next) => {
   try {
-    const hostels = await Hostels.find();
+    const features = new APIfeatures(Hostels.find(), req.query)
+      .filter()
+      .sort()
+      .limitFields()
+      .paginate();
+
+    const hostels = await features.query;
 
     res.status(200).json({
       status: 'success',
@@ -22,6 +29,7 @@ exports.getAllHostels = async (req, res, next) => {
 exports.getHostel = async (req, res, next) => {
   try {
     const hostel = await Hostels.findById(req.params.id);
+
     res.status(200).json({
       status: 'success',
       data: {
@@ -62,7 +70,7 @@ exports.updateHostel = async (req, res, next) => {
       new: true,
       runValidators: true,
     });
-    // if (!hostel) next(err);
+    if (!hostel) next(err);
 
     res.status(200).json({
       status: 'success',
