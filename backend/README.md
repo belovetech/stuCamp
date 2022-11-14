@@ -10,7 +10,10 @@ Follow instructions to install the latest version of nodejs for your platform in
 ### NPM Dependencies
 
 Once you have your virtual environment setup and running, install dependencies by naviging to the /backend directory and running:
-`npm install`
+
+```
+npm install
+```
 
 This will install all of the required packages we selected within the package.json.
 
