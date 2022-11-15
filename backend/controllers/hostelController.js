@@ -10,7 +10,9 @@ exports.getAllHostels = catchAsync(async (req, res, next) => {
     .limitFields()
     .paginate();
 
+  // console.log(features.query)
   const hostels = await features.query;
+  console.log(hostels);
 
   res.status(200).json({
     status: 'success',

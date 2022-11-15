@@ -21,8 +21,8 @@ const handleValidationErrorDB = err => {
 const sendErrorDev = (err, res) => {
   res.status(err.statusCode).json({
     status: err.status,
-    error: err,
     message: err.message,
+    error: err,
     stack: err.stack,
   });
 };
@@ -57,7 +57,7 @@ module.exports = (err, req, res, next) => {
   } else if (process.env.NODE_ENV === 'production') {
     let error = { ...err };
     if (error.name === 'CastError') error = handleCastErrorDB(error);
-    if (error.code === 11000) error = handleDuplicateErrorDB(error);
+    if (err.code === 11000) err = handleDuplicateErrorDB(error);
     if (error.name === 'ValidationError')
       error = handleValidationErrorDB(error);
 
