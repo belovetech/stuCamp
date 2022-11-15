@@ -26,7 +26,7 @@ npm start
 
 ## Author
 
-- Samuel Adebayo
-- Abeeb Raheem
-- Opeyemi Odebode
+- Samuel Adebayo - [Adebayo-S](https://github.com/Adebayo-S)
+- Abeeb Raheem - [belovetech](https://github.com/belovetech)
+- Opeyemi Odebode - [surahj](https://github.com/surahj)
 
