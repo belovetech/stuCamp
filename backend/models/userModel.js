@@ -1,3 +1,4 @@
+const bcrypt = require('bcryptjs');
 const mongoose = require('mongoose');
 const validator = require('validator');
 
@@ -15,14 +16,6 @@ const userSchema = new mongoose.Schema({
     lowercase: true,
     validate: [validator.isEmail, 'PLease provide a valid email'],
   },
-  // role: {
-  //   type: String,
-  //   trim: true,
-  //   enum: {
-  //     values: ['admin', 'user'],
-  //     messages: 'You can either login as Admin or User',
-  //   },
-  // },
   active: {
     type: Boolean,
     default: false,
@@ -43,6 +36,15 @@ const userSchema = new mongoose.Schema({
       message: 'Passwords are not the same!',
     },
   },
+});
+
+userSchema.pre('save', async function (next) {
+  //Only run this function is password is actually modified
+  if (!this.isModified('password')) return next();
+
+  this.password = await bcrypt.hash(this.password, 12);
+
+  this.passwordConfirm = undefined;
 });
 
 const User = mongoose.model('User', userSchema);
