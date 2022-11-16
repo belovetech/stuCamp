@@ -5,8 +5,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#F4E3F3",
-        secondary: "#00f6ff",
+        primary: "#89268B",
+        primary_deep: "#631b64",
+        secondary: "#F4E3F3",
         dimWhite: "rgba(255, 255, 255, 0.7)",
         dimBlue: "rgba(9, 151, 124, 0.1)",
       },
@@ -25,3 +26,4 @@ module.exports = {
   },
   plugins: [],
 };
+
