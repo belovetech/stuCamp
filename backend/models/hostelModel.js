@@ -5,7 +5,7 @@ const slugify = require('slugify');
 const hostelSchema = new mongoose.Schema({
   name: {
     type: String,
-    require: [true, 'A hostel must have a name'],
+    required: [true, 'A hostel must have a name'],
     unique: true,
     trim: true,
     minlength: [10, 'A hostel name must be at leats 10 charcaters'],
@@ -13,7 +13,7 @@ const hostelSchema = new mongoose.Schema({
   },
   type: {
     type: String,
-    require: [true, 'A hostel must have a type'],
+    required: [true, 'A hostel must have a type'],
     trim: true,
     enum: {
       values: ['self-contain', 'single-room', 'apartment'],
@@ -23,30 +23,30 @@ const hostelSchema = new mongoose.Schema({
   },
   ratingsAverage: {
     type: Number,
-    require: [true, 'A hostel must have a rating average'],
+    required: [true, 'A hostel must have a rating average'],
     min: [1, 'A hostel rating must above 1.0'],
     max: [5, 'A hostel rating must below 5.0 '],
   },
   price: {
     type: Number,
-    require: [true, 'A hostel must have a price'],
+    required: [true, 'A hostel must have a price'],
   },
   roomsAvailable: {
     type: Number,
-    require: [true, 'A hostel must have avaialable room for rent'],
+    required: [true, 'A hostel must have avaialable room for rent'],
   },
   closeBy: {
     type: Boolean,
-    require: [true, 'A hostel must identify close by or not'],
+    required: [true, 'A hostel must identify close by or not'],
   },
   summary: {
     type: String,
-    require: [true, 'A hostel must have a summary'],
+    required: [true, 'A hostel must have a summary'],
     trim: true,
   },
   description: {
     type: String,
-    require: [true, 'A hostel must have a description'],
+    required: [true, 'A hostel must have a description'],
     trim: true,
   },
   imageCover: {
