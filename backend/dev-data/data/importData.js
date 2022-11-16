@@ -18,9 +18,16 @@ mongoose
   })
   .then(() => console.log('DB connection successful!'));
 
-const hostels = JSON.parse(
-  fs.readFileSync(`${__dirname}/hostel.json`, 'utf-8')
-);
+let hostels;
+if (process.argv.length === 4 && process.argv[3].endsWith('.json')) {
+  hostels = JSON.parse(
+    fs.readFileSync(`${__dirname}/${process.argv[3]}`, 'utf-8')
+  );
+} else {
+  console.log('Usage: node dev-data/data/importData.js --flag filename');
+  console.log('File must be a json file');
+  process.exit(1);
+}
 
 const importData = async () => {
   try {
