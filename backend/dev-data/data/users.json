@@ -1,0 +1,65 @@
+[
+  {
+    "_id": "5c8a1d5b0190b214360dc051",
+    "name": "Abeeb Raheem",
+    "email": "admin@hostel.io",
+    "role": "admin",
+    "active": true,
+    "photo": "user-1.jpg",
+    "password": "$2a$12$Q0grHjH9PXc6SxivC8m12.2mZJ9BbKcgFpwSG4Y1ZEII8HJVzWeyS"
+  },
+  {
+    "_id": "5c8a1d5b0190b214360dc052",
+    "name": "Samuel Adebayo",
+    "email": "admin@hostel.io",
+    "role": "admin",
+    "active": true,
+    "photo": "user-2.jpg",
+    "password": "$2a$12$Q0grHjH9PXc6SxivC8m12.2mZJ9BbKcgFpwSG4Y1ZEII8HJVzWeyS"
+  },
+  {
+    "_id": "5c8a1d5b0190b214360dc053",
+    "name": "Opeyemi Odebode",
+    "email": "admin@hostel.io",
+    "role": "admin",
+    "active": true,
+    "photo": "user-3.jpg",
+    "password": "$2a$12$Q0grHjH9PXc6SxivC8m12.2mZJ9BbKcgFpwSG4Y1ZEII8HJVzWeyS"
+  },
+  {
+    "_id": "5c8a1d5b0190b214360dc054",
+    "name": "Omorilewa Adunni",
+    "email": "user@hostel.io",
+    "role": "user",
+    "active": true,
+    "photo": "user-3.jpg",
+    "password": "$2a$12$Q0grHjH9PXc6SxivC8m12.2mZJ9BbKcgFpwSG4Y1ZEII8HJVzWeyS"
+  },
+  {
+    "_id": "5c8a1d5b0190b214360dc055",
+    "name": "Omorilewa Adunni",
+    "email": "user@hostel.io",
+    "role": "user",
+    "active": true,
+    "photo": "user-3.jpg",
+    "password": "$2a$12$Q0grHjH9PXc6SxivC8m12.2mZJ9BbKcgFpwSG4Y1ZEII8HJVzWeyS"
+  },
+  {
+    "_id": "5c8a1d5b0190b214360dc055",
+    "name": "Okeowo Abdul-Qudus",
+    "email": "user@hostel.io",
+    "role": "user",
+    "active": true,
+    "photo": "user-3.jpg",
+    "password": "$2a$12$Q0grHjH9PXc6SxivC8m12.2mZJ9BbKcgFpwSG4Y1ZEII8HJVzWeyS"
+  },
+  {
+    "_id": "5c8a1d5b0190b214360dc056",
+    "name": "Adufe yusuf",
+    "email": "user@hostel.io",
+    "role": "user",
+    "active": true,
+    "photo": "user-3.jpg",
+    "password": "$2a$12$Q0grHjH9PXc6SxivC8m12.2mZJ9BbKcgFpwSG4Y1ZEII8HJVzWeyS"
+  }
+]
