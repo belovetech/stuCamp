@@ -17,7 +17,7 @@ npm install
 
 This will install all of the required packages we selected within the package.json.
 
-#### Key Dependencies
+### Key Dependencies
 
 [Express](https://expressjs.com/) is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications
 
@@ -35,12 +35,13 @@ You can either run it as development or prodcution mode. Each time you open a ne
 
 ### API Reference
 
-#### Getting Started
+### Getting Started
 
 Base URL: Currently this application is only hosted locally. The backend is hosted at http://127.0.0.1:3000/api/v1
-Authentication: This version does not require authentication or API keys.
 
-#### Error Handling
+Authentication: Json Web Token (JWT) is used for authentication.
+
+### Error Handling
 
 Errors are returned as JSON in the following format:
 
@@ -66,9 +67,9 @@ The API will return four types of errors:
 500 - internal server error
 ```
 
-#### API Endpoints
+### API Endpoints
 
-#### Hostel Resources
+### Hostel Resources
 
 GET /hostels
 General: Returns a list of hostels.
