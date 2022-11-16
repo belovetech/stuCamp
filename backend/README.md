@@ -173,7 +173,7 @@ Sample: curl http://127.0.0.1:3000/hostels
 ```
 
 GET /hostels/:id
-General: Returns a list of hostels.
+General: Returns a single hostel based on id.
 
 Sample: curl http://127.0.0.1:3000/hostels/6370066e0bc496358dba995d
 
@@ -204,9 +204,9 @@ Sample: curl http://127.0.0.1:3000/hostels/6370066e0bc496358dba995d
 ```
 
 POST /hostels
-General: Returns a list of hostels.
+General: Returns a new hostel.
 
-Sample: curl -d '{"name": "unique mansion hostel": "type": "single-room"}' http://127.0.0.1:3000/hostels/6370066e0bc496358dba995d -H 'Content-Type: application/json' -X POST
+Sample: curl -d '{"name": "unique mansion hostel": "type": "single-room"}' http://127.0.0.1:3000/hostels -H 'Content-Type: application/json' -X POST
 
 ```
 {
@@ -228,7 +228,7 @@ Sample: curl -d '{"name": "unique mansion hostel": "type": "single-room"}' http:
 ```
 
 PUT /hostels/:id
-General: Returns a list of hostels.
+General: Returns updated hostel.
 
 Sample: curl -d '{"name": "unique mansion hostel"}' http://127.0.0.1:3000/hostels/6370066e0bc496358dba995d -H 'Content-Type: application/json' -X PUT
 
@@ -252,7 +252,7 @@ Sample: curl -d '{"name": "unique mansion hostel"}' http://127.0.0.1:3000/hostel
 ```
 
 DELETE /hostels/:id
-General: Returns a list of hostels.
+General: Returns null
 
 Sample: curl -X DELETE http://127.0.0.1:3000/hostels/6370066e0bc496358dba995d
 
@@ -260,5 +260,39 @@ Sample: curl -X DELETE http://127.0.0.1:3000/hostels/6370066e0bc496358dba995d
 {
     "status": "success",
     "data": null
+}
+```
+
+### User Resources
+
+POST /singup
+General: Returns a new user created.
+
+Sample: curl -d {"name": "Ben Ken", "email": "benken@gmail.io"} http://127.0.0.1:3000/users/signup -H "Content-Type: application/json" -X POST
+
+```
+{
+    "status": "success",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6CJ9.eyJpZCI6IjYzNzQ3Z2ODU3OTAyNywzU1MDI3fQ.vill0T-ThQbuA6z5EX1Qg7W8iMqLs",
+    "data": {
+        "user": {
+            "_id": "63747ed2bd9b1e1ab9b89065",
+            "name": "Ben Ken",
+            "email": "benken@gmail.io",
+            "password": "$2a$12$Be87Dhpw8ROwUDwEhH/uUOc6h/vXFiyA8WTo6dIzygxNr9I4TNw9e",
+        }
+    }
+}
+```
+
+POST /login
+General: Returns JWT token.
+
+Sample: curl -d {"email": "benken@gmail.io": "password": "ben123"} http://127.0.0.1:3000/users/login -H "Content-Type: application/json" -X POST
+
+```
+{
+    "status": "success",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6CJ9.eyJpZCI6IjYzNzQ3Z2ODU3OTAyNywzU1MDI3fQ.vill0T-ThQbuA6z5EX1Qg7W8iMqLs",
 }
 ```
