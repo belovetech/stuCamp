@@ -1,12 +1,17 @@
 const express = require('express');
 const hostelController = require('./../controllers/hostelController');
+const authController = require('./../controllers/authController');
 
 // instantiate custom router
 const router = express.Router();
 
 router
+  .route('/top-5-cheap')
+  .get(hostelController.aliasTopCheap, hostelController.getAllHostels);
+
+router
   .route('/')
-  .get(hostelController.getAllHostels)
+  .get(authController.protect, hostelController.getAllHostels)
   .post(hostelController.createHostel);
 
 router
