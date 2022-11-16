@@ -11,8 +11,8 @@ Follow instructions to install the latest version of nodejs for your platform in
 
 Once you have your virtual environment setup and running, install dependencies by naviging to the /backend directory and running:
 
-```
-npm install
+```BASH
+`npm install`
 ```
 
 This will install all of the required packages we selected within the package.json.
@@ -92,6 +92,7 @@ Sample: curl http://127.0.0.1:3000/hostels
                 "name": "Learners' garden hostel",
                 "type": "self-contain",
                 "price": 95000,
+                "ratingsAverage": 2.5,
                 "roomsAvailable": 12,
                 "closeBy": true,
                 "summary": "Stable electricity, running water, fenced,  and much more",
@@ -109,6 +110,7 @@ Sample: curl http://127.0.0.1:3000/hostels
                 "name": "King'n'Queen hostel",
                 "type": "self-contain",
                 "price": 75000,
+                "ratingsAverage": 3.5,
                 "roomsAvailable": 6,
                 "closeBy": true,
                 "summary": "Stable electricity, running water, fenced,  and much more",
@@ -126,6 +128,7 @@ Sample: curl http://127.0.0.1:3000/hostels
                 "name": "Arafims hostel",
                 "type": "single-room",
                 "price": 45000,
+                "ratingsAverage": 3.5,
                 "roomsAvailable": 10,
                 "closeBy": false,
                 "summary": "Stable electricity, well-water",
@@ -143,6 +146,7 @@ Sample: curl http://127.0.0.1:3000/hostels
                 "name": "Gulf pearl apartment",
                 "type": "apartment",
                 "price": 155000,
+                "ratingsAverage": 2.5,
                 "roomsAvailable": 2,
                 "closeBy": true,
                 "summary": "Stable electricity, running water, fenced, security and much more",
@@ -160,6 +164,7 @@ Sample: curl http://127.0.0.1:3000/hostels
                 "name": "Queens hostel",
                 "type": "self-contain",
                 "price": 45000,
+                "ratingsAverage": 3.5,
                 "roomsAvailable": 5,
                 "closeBy": false,
                 "summary": "Stable electricity, well-water",
@@ -191,6 +196,7 @@ Sample: curl http://127.0.0.1:3000/hostels/6370066e0bc496358dba995d
             "name": "Learners' garden hostel",
             "type": "self-contain",
             "price": 95000,
+            "ratingsAverage": 4.5,
             "roomsAvailable": 12,
             "closeBy": true,
             "summary": "Stable electricity, running water, fenced,  and much more",
@@ -199,6 +205,57 @@ Sample: curl http://127.0.0.1:3000/hostels/6370066e0bc496358dba995d
             "slug": "learners'-garden-hostel",
             "__v": 0
         }
+    }
+}
+```
+
+GET /top-5-cheap
+General: Returns top 5 cheap hostels.
+
+Sample: curl http://127.0.0.1:3000/hostels/top-5-cheap
+
+```JSON
+{
+    "status": "success",
+    "results": 5,
+    "data": {
+        "hostels": [
+            {
+                "_id": "6374a699719ad05f690e3148",
+                "name": "Rubiks hostel",
+                "type": "single-room",
+                "ratingsAverage": 4.5,
+                "price": 45000
+            },
+            {
+                "_id": "6374a699719ad05f690e3146",
+                "name": "Pyramid hostel",
+                "type": "self-contain",
+                "ratingsAverage": 4.5,
+                "price": 45000
+            },
+            {
+                "_id": "6374a699719ad05f690e3144",
+                "name": "Queens hostel",
+                "type": "self-contain",
+                "ratingsAverage": 3.5,
+                "price": 45000
+            },
+            {
+                "_id": "6374a699719ad05f690e3143",
+                "name": "Arafims hostel",
+                "type": "single-room",
+                "ratingsAverage": 2.5,
+                "price": 45000
+            },
+            {
+                "_id": "6374a699719ad05f690e314a",
+                "name": "Kikelomo hostel",
+                "type": "single-room",
+                "ratingsAverage": 3.5,
+                "price": 55000
+            }
+        ]
     }
 }
 ```
