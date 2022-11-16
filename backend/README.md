@@ -296,3 +296,31 @@ Sample: curl -d {"email": "benken@gmail.io": "password": "ben123"} http://127.0.
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6CJ9.eyJpZCI6IjYzNzQ3Z2ODU3OTAyNywzU1MDI3fQ.vill0T-ThQbuA6z5EX1Qg7W8iMqLs",
 }
 ```
+
+GET /users
+General: Returns all users.
+
+Sample: curl http://127.0.0.1:3000/users/
+
+```
+{
+    "status": "success",
+    "results": 2,
+    "data": {
+        "users": [
+            {
+                "_id": "6373e971b75c8472c80037f1",
+                "name": "Abeeb Raheem",
+                "email": "abcdeeef@gmail.com",
+                "__v": 0
+            },
+            {
+                "_id": "63747ed2bd9b1e1ab9b89065",
+                "name": "Ken Ben",
+                "email": "kenben@gmail.io",
+                "__v": 0
+            }
+        ]
+    }
+}
+```
