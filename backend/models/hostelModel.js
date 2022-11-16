@@ -21,7 +21,7 @@ const hostelSchema = new mongoose.Schema({
         'A hostel type can either be: self-contain, single-room, or apartment',
     },
   },
-  ratingAverage: {
+  ratingsAverage: {
     type: Number,
     require: [true, 'A hostel must have a rating average'],
     min: [1, 'A hostel rating must above 1.0'],
