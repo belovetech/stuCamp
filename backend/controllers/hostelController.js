@@ -3,6 +3,15 @@ const AppError = require('./../utils/appError');
 const catchAsync = require('./../utils/catchAsync');
 const Hostels = require('./../models/hostelModel');
 
+// HOSTEL ROUTER MIDDLEWARE
+exports.aliasTopCheap = (req, res, next) => {
+  req.query.limit = '5';
+  req.query.sort = 'price,-ratingsAverage';
+  req.query.fields = 'name,price,type,ratingsAverage';
+  console.log(req.query);
+  next();
+};
+
 exports.getAllHostels = catchAsync(async (req, res, next) => {
   const features = new APIfeatures(Hostels.find(), req.query)
     .filter()
@@ -12,7 +21,6 @@ exports.getAllHostels = catchAsync(async (req, res, next) => {
 
   // console.log(features.query)
   const hostels = await features.query;
-  console.log(hostels);
 
   res.status(200).json({
     status: 'success',
