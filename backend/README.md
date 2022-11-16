@@ -28,9 +28,9 @@ This will install all of the required packages we selected within the package.js
 From within the ./backend directory
 You can either run it as development or prodcution mode. Each time you open a new terminal session, run:
 
-```
-`npm run start:dev` for development mode
-`npm run start:prod` for production mode
+```BASH
+`npm run start:dev`  -  development mode
+`npm run start:prod` -  production mode
 ```
 
 ### API Reference
@@ -45,7 +45,7 @@ Authentication: Json Web Token (JWT) is used for authentication.
 
 Errors are returned as JSON in the following format:
 
-```
+```JSON
 {
     "status": "fail",
     "error": {
@@ -60,7 +60,7 @@ Errors are returned as JSON in the following format:
 
 The API will return four types of errors:
 
-```
+```JSON
 400 - bad request
 404 - resource not found
 401 - unauthorized
