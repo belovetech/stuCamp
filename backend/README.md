@@ -76,7 +76,7 @@ General: Returns a list of hostels.
 
 Sample: curl http://127.0.0.1:3000/hostels
 
-```
+```JSON
 {
     "status": "success",
     "results": 5,
@@ -177,7 +177,7 @@ General: Returns a single hostel based on id.
 
 Sample: curl http://127.0.0.1:3000/hostels/6370066e0bc496358dba995d
 
-```
+```JSON
 {
     "status": "success",
     "data": {
@@ -208,7 +208,7 @@ General: Returns a new hostel.
 
 Sample: curl -d '{"name": "unique mansion hostel": "type": "single-room"}' http://127.0.0.1:3000/hostels -H 'Content-Type: application/json' -X POST
 
-```
+```JSON
 {
     "status": "success",
     "data": {
@@ -232,7 +232,7 @@ General: Returns updated hostel.
 
 Sample: curl -d '{"name": "unique mansion hostel"}' http://127.0.0.1:3000/hostels/6370066e0bc496358dba995d -H 'Content-Type: application/json' -X PUT
 
-```
+```JSON
 {
     "status": "success",
     "data": {
@@ -256,7 +256,7 @@ General: Returns null
 
 Sample: curl -X DELETE http://127.0.0.1:3000/hostels/6370066e0bc496358dba995d
 
-```
+```JSON
 {
     "status": "success",
     "data": null
@@ -270,7 +270,7 @@ General: Returns a new user created.
 
 Sample: curl -d {"name": "Ben Ken", "email": "benken@gmail.io"} http://127.0.0.1:3000/users/signup -H "Content-Type: application/json" -X POST
 
-```
+```JSON
 {
     "status": "success",
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6CJ9.eyJpZCI6IjYzNzQ3Z2ODU3OTAyNywzU1MDI3fQ.vill0T-ThQbuA6z5EX1Qg7W8iMqLs",
@@ -290,7 +290,7 @@ General: Returns JWT token.
 
 Sample: curl -d {"email": "benken@gmail.io": "password": "ben123"} http://127.0.0.1:3000/users/login -H "Content-Type: application/json" -X POST
 
-```
+```JSON
 {
     "status": "success",
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6CJ9.eyJpZCI6IjYzNzQ3Z2ODU3OTAyNywzU1MDI3fQ.vill0T-ThQbuA6z5EX1Qg7W8iMqLs",
@@ -302,7 +302,7 @@ General: Returns all users.
 
 Sample: curl http://127.0.0.1:3000/users/
 
-```
+```JSON
 {
     "status": "success",
     "results": 2,
