@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken');
 const AppError = require('./../utils/appError');
 const Users = require('./../models/userModel');
 const catchAsync = require('./../utils/catchAsync');
+const sendEmail = require('./../utils/sendEmail');
 
 // GENERATE JWT TOKEN
 const signToken = id => {
@@ -105,10 +106,8 @@ exports.protect = catchAsync(async (req, res, next) => {
 
 // AUTHORIZATION
 exports.restrictTo = (...roles) => {
-  console.log(roles);
   return (req, res, next) => {
     // roles = ['admin', 'hostel-owner']
-    console.log(req.user);
     if (!roles.includes(req.user.role)) {
       return next(
         new AppError('You do not have permission to perform this action.', 403)
@@ -117,3 +116,47 @@ exports.restrictTo = (...roles) => {
     next();
   };
 };
+
+// FORGOT PASSWORD
+exports.forgotPassword = catchAsync(async (req, res, next) => {
+  // 1). Get user based on posted email
+  const user = await Users.findOne({ email: req.body.email });
+
+  if (!user) {
+    return next(new AppError('There is no user with the email address.', 404));
+  }
+
+  // 2). Generate random reset token
+  const resetToken = user.forgetPasswordResetToken();
+  await user.save({ validateBeforeSave: false });
+
+  const resetURL = `${req.protocol}//:${req.get(
+    'host'
+  )}/api/v1/users/resetPassword/${resetToken}`;
+
+  const message = `Forgot your password? submit a PATCH request with your new password and condirm password to: ${resetURL}.\nIf you didn't forget your password, please ignore this email.`;
+
+  // 3). Send it to user's email
+  try {
+    await sendEmail({
+      email: user.email,
+      subject: 'Your reset password token. (expires in 10 min).',
+      message,
+    });
+    res.status(200).json({
+      status: 'success',
+      message: 'Token sent to email!',
+    });
+  } catch (err) {
+    user.passwordResetToken = undefined;
+    user.passwordResetExpires = undefined;
+    await user.save({ validateBeforeSave: false });
+
+    return next(
+      new AppError('There was an error sending email. Try again!', 500)
+    );
+  }
+});
+
+// RESET PASSWORD
+exports.resetPassword = catchAsync(async (req, res, next) => {});

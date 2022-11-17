@@ -1,4 +1,5 @@
 const bcrypt = require('bcryptjs');
+const crypto = require('crypto');
 const mongoose = require('mongoose');
 const validator = require('validator');
 
@@ -43,10 +44,13 @@ const userSchema = new mongoose.Schema({
     },
   },
   passwordChangedAt: Date,
+  passwordResetToken: String,
+  passwordResetExpires: Date,
 });
 
+// document middleware
 userSchema.pre('save', async function (next) {
-  //Only run this function is password is actually modified
+  //Only run this function if password is actually modified
   if (!this.isModified('password')) return next();
 
   this.password = await bcrypt.hash(this.password, 12);
@@ -56,6 +60,7 @@ userSchema.pre('save', async function (next) {
 
 // Document instance methods.
 // This methods will be available on every instance of the document
+// CORRECT PASSWORD
 userSchema.methods.correctPassword = async function (
   candidatePassword,
   userPassword
@@ -63,6 +68,7 @@ userSchema.methods.correctPassword = async function (
   return await bcrypt.compare(candidatePassword, userPassword);
 };
 
+// CHANGED PASSWORD AFTER TOKEN WAS ISSUED
 userSchema.methods.changedPasswordAfter = function (JWTTimestamp) {
   if (this.passwordChangedAt) {
     // Convert time to seconds from milliseconds
@@ -75,6 +81,23 @@ userSchema.methods.changedPasswordAfter = function (JWTTimestamp) {
   }
 
   return false;
+};
+
+// GENERATE RESET TOKEN
+userSchema.methods.forgetPasswordResetToken = function () {
+  const resetToken = crypto.randomBytes(32).toString('hex');
+
+  this.passwordResetToken = crypto
+    .createHash('sha256')
+    .update(resetToken)
+    .digest('hex');
+
+  console.log({ resetToken }, this.passwordResetToken);
+
+  // compute 10 minutes in milliseconds
+  this.passwordResetExpires = Date.now() + 10 * 60 * 1000;
+
+  return resetToken;
 };
 
 const User = mongoose.model('User', userSchema);
