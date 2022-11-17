@@ -204,7 +204,6 @@ Sample: curl http://127.0.0.1:3000/hostels/6370066e0bc496358dba995d
             "description": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nIrure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
             "imageCover": "hostel-2-cover.jpg",
             "slug": "learners'-garden-hostel",
-            "__v": 0
         }
     }
 }
@@ -279,7 +278,6 @@ Sample: curl -d '{"name": "unique mansion hostel": "type": "single-room"}' http:
             "closeBy": true,
             "summary": "Stable electricity, running water, fenced,  and much more",
             "slug": "unique-mansion-hostel",
-            "__v": 0
         }
     }
 }
@@ -302,8 +300,7 @@ Sample: curl -d '{"name": "unique mansion hostel"}' http://127.0.0.1:3000/hostel
             "roomsAvailable": 12,
             "closeBy": true,
             "summary": "Stable electricity, running water, fenced,  and much more",
-            "slug": "unique-mansion-hostel",
-            "__v": 0
+            "slug": "unique-mansion-hostel"
         }
     }
 }
@@ -321,12 +318,12 @@ Sample: curl -X DELETE http://127.0.0.1:3000/hostels/6370066e0bc496358dba995d
 }
 ```
 
-### User Resources
+### Authentication
 
 POST /singup
 General: Returns a newly created user.
 
-Sample: curl -d {"name": "Ben Ken", "email": "benken@gmail.io"} http://127.0.0.1:3000/users/signup -H "Content-Type: application/json" -X POST
+Sample: curl -d {"name": "Ben Ken", "email": "benken@stucamp.io"} http://127.0.0.1:3000/users/signup -H "Content-Type: application/json" -X POST
 
 ```JSON
 {
@@ -336,7 +333,7 @@ Sample: curl -d {"name": "Ben Ken", "email": "benken@gmail.io"} http://127.0.0.1
         "user": {
             "_id": "63747ed2bd9b1e1ab9b89065",
             "name": "Ben Ken",
-            "email": "benken@gmail.io",
+            "email": "benken@stucamp.io",
             "password": "$2a$12$Be87Dhpw8ROwUDwEhH/uUOc6h/vXFiyA8WTo6dIzygxNr9I4TNw9e",
         }
     }
@@ -346,14 +343,76 @@ Sample: curl -d {"name": "Ben Ken", "email": "benken@gmail.io"} http://127.0.0.1
 POST /login
 General: Returns JWT token issued to the user.
 
-Sample: curl -d {"email": "benken@gmail.io": "password": "ben123"} http://127.0.0.1:3000/users/login -H "Content-Type: application/json" -X POST
+Sample: curl -d {"email": "benken@stucamp.io": "password": "ben123"} http://127.0.0.1:3000/users/login -H "Content-Type: application/json" -X POST
 
 ```JSON
 {
     "status": "success",
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6CJ9.eyJpZCI6IjYzNzQ3Z2ODU3OTAyNywzU1MDI3fQ.vill0T-ThQbuA6z5EX1Qg7W8iMqLs",
+    "data": {
+        "user": {
+            "_id": "63747ed2bd9b1e1ab9b89065",
+            "name": "Ben Ken",
+            "email": "benken@stucamp.io",
+            "password": "$2a$12$Be87Dhpw8ROwUDwEhH/uUOc6h/vXFiyA8WTo6dIzygxNr9I4TNw9e",
+        }
+    }
 }
 ```
+
+POST /forgotPassword
+General: Reset password will be sent to the user's email address.
+
+Sample: curl -d {"email": "benken@stucamp.io"} http://127.0.0.1:3000/users/forgotPassword -H "Content-Type: application/json" -X POST
+
+```JSON
+{
+    "status": "success",
+    "token": "Token sent to email!",
+}
+```
+
+PATCH /resetPassword
+General: Return new password along with user's data.
+
+Sample: curl -d {"password": "test123", "passwordConfirm": "test123"} http://127.0.0.1:3000/users/resetPassword -H "Content-Type: application/json" -X PATCH
+
+```JSON
+{
+    "status": "success",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6CJ9.eyJpZCI6IjYzNzQ3Z2ODU3OTAyNywzU1MDI3fQ.vill0T-ThQbuA6z5EX1Qg7W8iMqLs",
+    "data": {
+        "user": {
+            "_id": "63747ed2bd9b1e1ab9b89065",
+            "name": "Ben Ken",
+            "email": "benken@stucamp.io",
+            "password": "$2a$12$Be87Dhpw8ROwUDwEhH/uUOc6h/vXFiyA8WTo6dIzygxNr9I4TNw9e",
+        }
+    }
+}
+```
+
+PATCH /updatePassword
+General: Return updated user's data.
+
+Sample: curl -d {"passwordCurrent": "abeeb1234", "password": "test123", "passwordConfirm": "test123"} http://127.0.0.1:3000/users/resetPassword -H "Content-Type: application/json" -X PATCH
+
+```JSON
+{
+    "status": "success",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6CJ9.eyJpZCI6IjYzNzQ3Z2ODU3OTAyNywzU1MDI3fQ.vill0T-ThQbuA6z5EX1Qg7W8iMqLs",
+    "data": {
+        "user": {
+            "_id": "63747ed2bd9b1e1ab9b89065",
+            "name": "Ben Ken",
+            "email": "benken@stucamp.io",
+            "password": "$2a$12$Be87Dhpw8ROwUDwEhH/uUOc6h/vXFiyA8WTo6dIzygxNr9I4TNw9e",
+        }
+    }
+}
+```
+
+### User Resources
 
 GET /users
 General: Returns all users.
@@ -369,16 +428,69 @@ Sample: curl http://127.0.0.1:3000/users/
             {
                 "_id": "6373e971b75c8472c80037f1",
                 "name": "Abeeb Raheem",
-                "email": "abcdeeef@gmail.com",
-                "__v": 0
+                "role": "admin",
+                "email": "abeeb@stucamp.com",
             },
             {
                 "_id": "63747ed2bd9b1e1ab9b89065",
                 "name": "Ken Ben",
-                "email": "kenben@gmail.io",
-                "__v": 0
+                "role": "user",
+                "email": "kenben@stucamp.io",
             }
         ]
     }
+}
+```
+
+GET /users/:id
+General: Returns user based on id.
+
+Sample: curl http://127.0.0.1:3000/users/63747ed2bd9b1e1ab9b89065
+
+```JSON
+{
+    "status": "success",
+    "data": {
+        "user": {
+            "role": "user",
+            "_id": "637674e56e9820a7ae54f419",
+            "name": "Samuel Adebayo",
+            "email": "samuel@stucamp.io",
+            "passwordChangedAt": "2022-11-17T18:24:11.658Z"
+        }
+    }
+}
+```
+
+Description: The JWT token generated when user logged in is used to identify the current user. DELETE AND PATCH operation will be perform on the current user.
+
+PATCH /users/updateMe
+General: Returns updated data.
+
+Sample: curl -d {"name": "Abeeb Raheem"} http://127.0.0.1:3000/users/updateMe -H "Content-Type: application/json" -X PATCH
+
+```JSON
+{
+    "status": "success",
+    "data": {
+        "user": {
+            "role": "user",
+            "_id": "6376aff5f69835e82183bdeb",
+            "name": "Abeeb Raheem",
+            "email": "abeeb@stucamp.io",
+        }
+    }
+}
+```
+
+DELETE /users/deleteMe
+General: Returns null.
+
+Sample: curl http://127.0.0.1:3000/users/deleteMe -H "Content-Type: application/json" -X DELETE
+
+```JSON
+{
+    "status": "success",
+    "data": null
 }
 ```
