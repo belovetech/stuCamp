@@ -9,7 +9,7 @@ Follow instructions to install the latest version of nodejs for your platform in
 
 ### NPM Dependencies
 
-Once you have your virtual environment setup and running, install dependencies by naviging to the /backend directory and running:
+Once you have your virtual environment setup and running, install dependencies by navigating to the /backend directory and running:
 
 ```BASH
 `npm install`
@@ -40,6 +40,7 @@ You can either run it as development or prodcution mode. Each time you open a ne
 Base URL: Currently this application is only hosted locally. The backend is hosted at http://127.0.0.1:3000/api/v1
 
 Authentication: Json Web Token (JWT) is used for authentication.
+NB: Only a successfully logged in admin and hostel owners can perform DELETE AND PATCH actions.
 
 ### Error Handling
 
@@ -284,10 +285,10 @@ Sample: curl -d '{"name": "unique mansion hostel": "type": "single-room"}' http:
 }
 ```
 
-PUT /hostels/:id
+PATCH /hostels/:id
 General: Returns updated hostel.
 
-Sample: curl -d '{"name": "unique mansion hostel"}' http://127.0.0.1:3000/hostels/6370066e0bc496358dba995d -H 'Content-Type: application/json' -X PUT
+Sample: curl -d '{"name": "unique mansion hostel"}' http://127.0.0.1:3000/hostels/6370066e0bc496358dba995d -H 'Content-Type: application/json' -X PATCH
 
 ```JSON
 {
@@ -323,7 +324,7 @@ Sample: curl -X DELETE http://127.0.0.1:3000/hostels/6370066e0bc496358dba995d
 ### User Resources
 
 POST /singup
-General: Returns a new user created.
+General: Returns a newly created user.
 
 Sample: curl -d {"name": "Ben Ken", "email": "benken@gmail.io"} http://127.0.0.1:3000/users/signup -H "Content-Type: application/json" -X POST
 
@@ -343,7 +344,7 @@ Sample: curl -d {"name": "Ben Ken", "email": "benken@gmail.io"} http://127.0.0.1
 ```
 
 POST /login
-General: Returns JWT token.
+General: Returns JWT token issued to the user.
 
 Sample: curl -d {"email": "benken@gmail.io": "password": "ben123"} http://127.0.0.1:3000/users/login -H "Content-Type: application/json" -X POST
 
