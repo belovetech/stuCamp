@@ -17,7 +17,11 @@ router
 router
   .route('/:id')
   .get(hostelController.getHostel)
-  .patch(hostelController.updateHostel)
+  .patch(
+    authController.protect,
+    authController.restrictTo('admin', 'hostel-owner'),
+    hostelController.updateHostel
+  )
   .delete(
     authController.protect,
     authController.restrictTo('admin', 'hostel-owner'),
