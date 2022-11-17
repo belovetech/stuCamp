@@ -13,6 +13,19 @@ const signToken = id => {
   });
 };
 
+const createSendToken = (user, statusCode, res) => {
+  //   JWT TOKEN
+  const token = signToken(user._id);
+
+  res.status(statusCode).json({
+    status: 'success',
+    token,
+    data: {
+      user,
+    },
+  });
+};
+
 // SIGNUP
 exports.signUp = catchAsync(async (req, res, next) => {
   const newUser = await Users.create({
@@ -23,16 +36,7 @@ exports.signUp = catchAsync(async (req, res, next) => {
     passwordChangedAt: req.body.passwordChangedAt,
   });
 
-  //   JWT TOKEN
-  const token = signToken(newUser._id);
-
-  res.status(201).json({
-    status: 'success',
-    token,
-    data: {
-      user: newUser,
-    },
-  });
+  createSendToken(newUser, 201, res);
 });
 
 // LOGIN
@@ -53,12 +57,7 @@ exports.login = catchAsync(async (req, res, next) => {
   }
 
   //   3. If everything ok, send token
-  const token = signToken(user._id);
-
-  res.status(201).json({
-    status: 'sucess',
-    token,
-  });
+  createSendToken(user, 200, res);
 });
 
 // AUTHENTICATION
@@ -182,13 +181,26 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
   user.passwordResetExpires = undefined;
   await user.save();
 
-  // 3). update chnagePsswordAt for the user
+  // 3). update changePasswordAt for the user
+  // 4). log user in and send JWT token
+  createSendToken(user, 200, res);
+});
+
+exports.updatePassword = catchAsync(async (req, res, next) => {
+  // 1). Get user from the collection
+  const { passwordCurrent, password, passwordConfirm } = req.body;
+  const user = await Users.findById(req.user.id).select('+password');
+
+  // 2). Check if current POSTed password is correct
+  if (!user || !user.correctPassword(passwordCurrent, user.password)) {
+    return next(new AppError('Your current password is wrong.', 401));
+  }
+
+  // 3). if so, update the password
+  user.password = password;
+  user.passwordConfirm = passwordConfirm;
+  await user.save();
 
   // 4). log user in and send JWT token
-  const token = signToken(user._id);
-
-  res.status(201).json({
-    status: 'sucess',
-    token,
-  });
+  createSendToken(user, 200, res);
 });
