@@ -4,12 +4,14 @@ const AppError = require('./../utils/appError');
 const Users = require('./../models/userModel');
 const catchAsync = require('./../utils/catchAsync');
 
+// GENERATE JWT TOKEN
 const signToken = id => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRES_IN,
   });
 };
 
+// SIGNUP
 exports.signUp = catchAsync(async (req, res, next) => {
   const newUser = await Users.create({
     name: req.body.name,
@@ -18,8 +20,6 @@ exports.signUp = catchAsync(async (req, res, next) => {
     passwordConfirm: req.body.passwordConfirm,
     passwordChangedAt: req.body.passwordChangedAt,
   });
-
-  console.log(req.body);
 
   //   JWT TOKEN
   const token = signToken(newUser._id);
@@ -33,6 +33,7 @@ exports.signUp = catchAsync(async (req, res, next) => {
   });
 });
 
+// LOGIN
 exports.login = catchAsync(async (req, res, next) => {
   const { email, password } = req.body;
 
@@ -58,6 +59,7 @@ exports.login = catchAsync(async (req, res, next) => {
   });
 });
 
+// AUTHENTICATION
 exports.protect = catchAsync(async (req, res, next) => {
   let token;
   // 1). Get token and check if exists
@@ -100,3 +102,18 @@ exports.protect = catchAsync(async (req, res, next) => {
   req.user = currentUser;
   next();
 });
+
+// AUTHORIZATION
+exports.restrictTo = (...roles) => {
+  console.log(roles);
+  return (req, res, next) => {
+    // roles = ['admin', 'hostel-owner']
+    console.log(req.user);
+    if (!roles.includes(req.user.role)) {
+      return next(
+        new AppError('You do not have permission to perform this action.', 403)
+      );
+    }
+    next();
+  };
+};
