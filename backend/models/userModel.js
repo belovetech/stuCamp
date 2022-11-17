@@ -17,10 +17,6 @@ const userSchema = new mongoose.Schema({
     lowercase: true,
     validate: [validator.isEmail, 'Please provide a valid email'],
   },
-  active: {
-    type: Boolean,
-    default: false,
-  },
   photo: String,
   role: {
     type: String,
@@ -46,6 +42,11 @@ const userSchema = new mongoose.Schema({
   passwordChangedAt: Date,
   passwordResetToken: String,
   passwordResetExpires: Date,
+  active: {
+    type: Boolean,
+    default: true,
+    select: false,
+  },
 });
 
 // document middleware
@@ -65,6 +66,12 @@ userSchema.pre('save', function (next) {
 
   // deduct 1 seconds so that token will be created after the passwordChangedAt has been set
   this.passwordChangedAt = Date.now() - 1000;
+  next();
+});
+
+// Only active user should be listed
+userSchema.pre(/^find/, function (next) {
+  this.find({ active: { $ne: false } });
   next();
 });
 
