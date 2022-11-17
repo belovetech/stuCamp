@@ -18,6 +18,10 @@ router
   .route('/:id')
   .get(hostelController.getHostel)
   .patch(hostelController.updateHostel)
-  .delete(hostelController.deleteHostel);
+  .delete(
+    authController.protect,
+    authController.restrictTo('admin', 'hostel-owner'),
+    hostelController.deleteHostel
+  );
 
 module.exports = router;
