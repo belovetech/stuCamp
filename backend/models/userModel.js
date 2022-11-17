@@ -55,7 +55,17 @@ userSchema.pre('save', async function (next) {
 
   this.password = await bcrypt.hash(this.password, 12);
 
+  // Delete password confirm field
   this.passwordConfirm = undefined;
+  next();
+});
+
+userSchema.pre('save', function (next) {
+  if (!this.isModified('password') || this.isNew) return next();
+
+  // deduct 1 seconds so that token will be created after the passwordChangedAt has been set
+  this.passwordChangedAt = Date.now() - 1000;
+  next();
 });
 
 // Document instance methods.
@@ -68,7 +78,7 @@ userSchema.methods.correctPassword = async function (
   return await bcrypt.compare(candidatePassword, userPassword);
 };
 
-// CHANGED PASSWORD AFTER TOKEN WAS ISSUED
+// IF PASSWORD WAS CHNAGED AFTER TOKEN WAS ISSUED
 userSchema.methods.changedPasswordAfter = function (JWTTimestamp) {
   if (this.passwordChangedAt) {
     // Convert time to seconds from milliseconds
@@ -92,7 +102,7 @@ userSchema.methods.forgetPasswordResetToken = function () {
     .update(resetToken)
     .digest('hex');
 
-  console.log({ resetToken }, this.passwordResetToken);
+  // console.log({ resetToken }, this.passwordResetToken);
 
   // compute 10 minutes in milliseconds
   this.passwordResetExpires = Date.now() + 10 * 60 * 1000;
