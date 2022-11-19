@@ -32,7 +32,7 @@ exports.getAllHostels = catchAsync(async (req, res, next) => {
 });
 
 exports.getHostel = catchAsync(async (req, res, next) => {
-  const hostel = await Hostels.findById(req.params.id);
+  const hostel = await Hostels.findById(req.params.id).populate('reviews');
 
   if (!hostel) {
     return next(new AppError('Hostel was not found', 404));
