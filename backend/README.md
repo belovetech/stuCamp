@@ -334,7 +334,7 @@ Sample: curl -d {"name": "Ben Ken", "email": "benken@stucamp.io"} http://127.0.0
             "_id": "63747ed2bd9b1e1ab9b89065",
             "name": "Ben Ken",
             "email": "benken@stucamp.io",
-            "password": "$2a$12$Be87Dhpw8ROwUDwEhH/uUOc6h/vXFiyA8WTo6dIzygxNr9I4TNw9e",
+            "role": "user"
         }
     }
 }
@@ -354,7 +354,7 @@ Sample: curl -d {"email": "benken@stucamp.io": "password": "ben123"} http://127.
             "_id": "63747ed2bd9b1e1ab9b89065",
             "name": "Ben Ken",
             "email": "benken@stucamp.io",
-            "password": "$2a$12$Be87Dhpw8ROwUDwEhH/uUOc6h/vXFiyA8WTo6dIzygxNr9I4TNw9e",
+            "role": "user"
         }
     }
 }
@@ -386,7 +386,7 @@ Sample: curl -d {"password": "test123", "passwordConfirm": "test123"} http://127
             "_id": "63747ed2bd9b1e1ab9b89065",
             "name": "Ben Ken",
             "email": "benken@stucamp.io",
-            "password": "$2a$12$Be87Dhpw8ROwUDwEhH/uUOc6h/vXFiyA8WTo6dIzygxNr9I4TNw9e",
+            "role": "user"
         }
     }
 }
@@ -406,7 +406,7 @@ Sample: curl -d {"passwordCurrent": "abeeb1234", "password": "test123", "passwor
             "_id": "63747ed2bd9b1e1ab9b89065",
             "name": "Ben Ken",
             "email": "benken@stucamp.io",
-            "password": "$2a$12$Be87Dhpw8ROwUDwEhH/uUOc6h/vXFiyA8WTo6dIzygxNr9I4TNw9e",
+            "role": "user"
         }
     }
 }
@@ -422,20 +422,37 @@ Sample: curl http://127.0.0.1:3000/users/
 ```JSON
 {
     "status": "success",
-    "results": 2,
+    "results": 4,
     "data": {
         "users": [
             {
-                "_id": "6373e971b75c8472c80037f1",
-                "name": "Abeeb Raheem",
                 "role": "admin",
-                "email": "abeeb@stucamp.com",
+                "_id": "637674e56e9820a7ae54f419",
+                "name": "Samuel Adebayo",
+                "email": "samuel@stucamp.io",
+                "__v": 0,
+                "passwordChangedAt": "2022-11-17T18:24:11.658Z"
             },
             {
-                "_id": "63747ed2bd9b1e1ab9b89065",
-                "name": "Ken Ben",
-                "role": "user",
-                "email": "kenben@stucamp.io",
+                "role": "admin",
+                "_id": "6376b57a36a6f2ef3b948abc",
+                "name": "Opeyemi Surajudeen",
+                "email": "suharj@stucamp.io",
+                "__v": 0
+            },
+            {
+                "role": "hostel-owner",
+                "_id": "6378bea3c1e56e7246474ec5",
+                "name": "Arafims",
+                "email": "arafims@stucamp.io",
+                "__v": 0
+            },
+            {
+                "role": "care-taker",
+                "_id": "6378c0de2f1d087476b512ee",
+                "name": "Hostel management company",
+                "email": "hmc@stucamp.io",
+                "__v": 0
             }
         ]
     }
