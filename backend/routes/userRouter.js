@@ -19,6 +19,7 @@ router.get('/', userController.getAllUser);
 router.get('/:id', userController.getMe);
 router.patch('/updateMe', authController.protect, userController.updateMe);
 router.delete('/deleteMe', authController.protect, userController.deleteMe);
+
 /*
 router.route('/').get(userController.getAllUser);
 router

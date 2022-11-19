@@ -17,6 +17,21 @@ const createSendToken = (user, statusCode, res) => {
   //   JWT TOKEN
   const token = signToken(user._id);
 
+  // COOKIES
+  const cookiesOptions = {
+    expires: new Date(
+      Date.now() + process.env.JWT_COOKIES_EXPIRES_IN * 24 * 60 * 60 * 1000
+    ),
+    httponly: true,
+  };
+
+  if (process.env.ENV_NODE === 'production') cookiesOptions.secure = true;
+
+  res.cookie('jwt', token, cookiesOptions);
+
+  // Remove password from the output
+  user.password = undefined;
+
   res.status(statusCode).json({
     status: 'success',
     token,
@@ -28,9 +43,11 @@ const createSendToken = (user, statusCode, res) => {
 
 // SIGNUP
 exports.signUp = catchAsync(async (req, res, next) => {
+  if (req.body.role !== 'admin') role: req.body.role;
   const newUser = await Users.create({
     name: req.body.name,
     email: req.body.email,
+    role: req.body.role !== 'admin' ? req.body.role : 'user',
     password: req.body.password,
     passwordConfirm: req.body.passwordConfirm,
     passwordChangedAt: req.body.passwordChangedAt,
