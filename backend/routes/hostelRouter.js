@@ -1,9 +1,19 @@
 const express = require('express');
 const hostelController = require('./../controllers/hostelController');
 const authController = require('./../controllers/authController');
+const reviewRouter = require('./../routes/reviewRouter');
 
 // instantiate custom router
 const router = express.Router();
+
+// router
+//   .route('/:tourId/reviews')
+//   .post(
+//     authController.protect,
+//     authController.restrictTo('user'),
+//     reviewController.createReview
+//   );
+router.use('/:tourId/reviews', reviewRouter);
 
 router
   .route('/top-5-cheap')
