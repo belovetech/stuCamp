@@ -44,7 +44,13 @@ app.use(xss());
 // Prevent paramaters pollution
 app.use(
   hpp({
-    whitelist: ['price', 'ratingsAverage', 'roomsAvailable', 'type'],
+    whitelist: [
+      'price',
+      'ratingsAverage',
+      'roomsAvailable',
+      'type',
+      'location',
+    ],
   })
 );
 

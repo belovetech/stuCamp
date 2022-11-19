@@ -60,10 +60,30 @@ const hostelSchema = new mongoose.Schema({
     select: false,
   },
   slug: String,
+  location: {
+    type: String,
+    required: [true, 'A hostel must have a location'],
+  },
+  tenants: [
+    {
+      type: mongoose.Schema.ObjectId,
+      ref: 'User',
+    },
+  ],
 });
+
+// QUERY MIDDLEWARES
 
 hostelSchema.pre('save', function (next) {
   this.slug = slugify(this.name, { lower: true });
+  next();
+});
+
+hostelSchema.pre(/^find/, function (next) {
+  this.populate({
+    path: 'tenants',
+    select: '-__v -passwordChangedAt',
+  });
   next();
 });
 
