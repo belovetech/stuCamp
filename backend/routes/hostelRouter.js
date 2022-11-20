@@ -13,6 +13,7 @@ const router = express.Router();
 //     authController.restrictTo('user'),
 //     reviewController.createReview
 //   );
+// allow nested route
 router.use('/:tourId/reviews', reviewRouter);
 
 router
