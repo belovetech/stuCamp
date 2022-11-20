@@ -1,9 +1,10 @@
 [
   {
-    "id": 0,
+    "id": "6379f8bb95766be4801f59b4",
     "name": "King'n'Queen hostel",
     "type": "self-contain",
     "ratingsAverage": 4.5,
+    "ratingsQuantity": 0,
     "price": 75000,
     "roomsAvailable": 6,
     "closeBy": true,
@@ -15,10 +16,11 @@
     "tenants": ["6378fb22bc8f75aaf8d050ae", "6378c0de2f1d087476b512ee"]
   },
   {
-    "id": 1,
+    "id": "6379f8bb95766be4801f59b5",
     "name": "Learners' garden hostel",
     "type": "self-contain",
     "ratingsAverage": 4.5,
+    "ratingsQuantity": 0,
     "price": 95000,
     "roomsAvailable": 12,
     "closeBy": true,
@@ -30,10 +32,11 @@
     "tenants": ["6378fb22bc8f75aaf8d050ae", "6378c0de2f1d087476b512ee"]
   },
   {
-    "id": 2,
+    "id": "6379f8bb95766be4801f59b6",
     "name": "Arafims hostel",
     "type": "single-room",
     "ratingsAverage": 2.5,
+    "ratingsQuantity": 0,
     "price": 45000,
     "roomsAvailable": 10,
     "closeBy": false,
@@ -45,10 +48,11 @@
     "tenants": ["6378fb22bc8f75aaf8d050ae", "6378c0de2f1d087476b512ee"]
   },
   {
-    "id": 3,
+    "id": "6379f8bb95766be4801f59b8",
     "name": "Queens hostel",
     "type": "self-contain",
     "ratingsAverage": 3.5,
+    "ratingsQuantity": 0,
     "price": 45000,
     "roomsAvailable": 5,
     "closeBy": false,
@@ -59,10 +63,11 @@
     "location": "Tipper garage"
   },
   {
-    "id": 4,
+    "id": "6379f8bb95766be4801f59b7",
     "name": "Gulf pearl apartment",
     "type": "apartment",
     "ratingsAverage": 4.5,
+    "ratingsQuantity": 0,
     "price": 155000,
     "roomsAvailable": 2,
     "closeBy": true,
@@ -73,10 +78,11 @@
     "location": "Sanrab"
   },
   {
-    "id": 5,
+    "id": "6379f8bb95766be4801f59ba",
     "name": "Pyramid hostel",
     "type": "self-contain",
     "ratingsAverage": 4.5,
+    "ratingsQuantity": 0,
     "price": 45000,
     "roomsAvailable": 6,
     "closeBy": false,
@@ -87,10 +93,11 @@
     "location": "Sanrab"
   },
   {
-    "id": 6,
+    "id": "6379f8bb95766be4801f59b9",
     "name": "Zapel hostel",
     "type": "self-contain",
     "ratingsAverage": 4.5,
+    "ratingsQuantity": 0,
     "price": 120000,
     "roomsAvailable": 6,
     "closeBy": true,
@@ -102,10 +109,11 @@
     "tenants": ["6378fb22bc8f75aaf8d050ae", "6378c0de2f1d087476b512ee"]
   },
   {
-    "id": 7,
+    "id": "6379f8bb95766be4801f59bb",
     "name": "Rubiks hostel",
     "type": "single-room",
     "ratingsAverage": 4.5,
+    "ratingsQuantity": 0,
     "price": 45000,
     "roomsAvailable": 8,
     "closeBy": false,
@@ -117,10 +125,11 @@
     "tenants": ["6378fb22bc8f75aaf8d050ae", "6378c0de2f1d087476b512ee"]
   },
   {
-    "id": 8,
+    "id": "6379f8bb95766be4801f59bc",
     "name": "El-mubaraq hostel",
     "type": "self-contain",
     "ratingsAverage": 3.5,
+    "ratingsQuantity": 0,
     "price": 120000,
     "roomsAvailable": 6,
     "closeBy": true,
@@ -132,10 +141,11 @@
     "tenants": ["6378fb22bc8f75aaf8d050ae", "6378c0de2f1d087476b512ee"]
   },
   {
-    "id": 9,
+    "id": "6379f8bb95766be4801f59bd",
     "name": "Kikelomo hostel",
     "type": "single-room",
     "ratingsAverage": 3.5,
+    "ratingsQuantity": 0,
     "price": 55000,
     "roomsAvailable": 12,
     "closeBy": true,

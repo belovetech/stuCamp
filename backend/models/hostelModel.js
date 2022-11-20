@@ -28,6 +28,10 @@ const hostelSchema = new mongoose.Schema(
       min: [1, 'A hostel rating must above 1.0'],
       max: [5, 'A hostel rating must below 5.0 '],
     },
+    ratingsQuantity: {
+      type: Number,
+      default: 0,
+    },
     price: {
       type: Number,
       required: [true, 'A hostel must have a price'],
@@ -47,7 +51,7 @@ const hostelSchema = new mongoose.Schema(
     },
     description: {
       type: String,
-      required: [true, 'A hostel must have a description'],
+      // required: [true, 'A hostel must have a description'],
       trim: true,
     },
     imageCover: {
@@ -61,10 +65,6 @@ const hostelSchema = new mongoose.Schema(
       select: false,
     },
     slug: String,
-    location: {
-      type: String,
-      required: [true, 'A hostel must have a location'],
-    },
     tenants: [
       {
         type: mongoose.Schema.ObjectId,
