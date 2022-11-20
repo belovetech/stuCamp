@@ -78,6 +78,10 @@ const hostelSchema = new mongoose.Schema(
   }
 );
 
+// INDEX
+hostelSchema.index({ price: 1, type: -1 });
+hostelSchema.index({ slug: 1 });
+
 // VIRTUAL POPULATE
 hostelSchema.virtual('reviews', {
   ref: 'Review',
