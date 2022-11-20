@@ -6,13 +6,6 @@ const reviewRouter = require('./../routes/reviewRouter');
 // instantiate custom router
 const router = express.Router();
 
-// router
-//   .route('/:tourId/reviews')
-//   .post(
-//     authController.protect,
-//     authController.restrictTo('user'),
-//     reviewController.createReview
-//   );
 // allow nested route
 router.use('/:tourId/reviews', reviewRouter);
 
@@ -22,8 +15,12 @@ router
 
 router
   .route('/')
-  .get(authController.protect, hostelController.getAllHostels)
-  .post(hostelController.createHostel);
+  .get(hostelController.getAllHostels)
+  .post(
+    authController.protect,
+    authController.restrictTo('admin', 'hostel-owner'),
+    hostelController.createHostel
+  );
 
 router
   .route('/:id')
