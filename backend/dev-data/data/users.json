@@ -2,7 +2,7 @@
   {
     "_id": "5c8a1d5b0190b214360dc051",
     "name": "Abeeb Raheem",
-    "email": "admin@hostel.io",
+    "email": "admin1@hostel.io",
     "role": "admin",
     "active": true,
     "photo": "user-1.jpg",
@@ -11,7 +11,7 @@
   {
     "_id": "5c8a1d5b0190b214360dc052",
     "name": "Samuel Adebayo",
-    "email": "admin@hostel.io",
+    "email": "admin2@hostel.io",
     "role": "admin",
     "active": true,
     "photo": "user-2.jpg",
@@ -20,7 +20,7 @@
   {
     "_id": "5c8a1d5b0190b214360dc053",
     "name": "Opeyemi Odebode",
-    "email": "admin@hostel.io",
+    "email": "admin3@hostel.io",
     "role": "admin",
     "active": true,
     "photo": "user-3.jpg",
@@ -28,38 +28,56 @@
   },
   {
     "_id": "5c8a1d5b0190b214360dc054",
-    "name": "Omorilewa Adunni",
-    "email": "user@hostel.io",
+    "name": "Adebayo Abiodun",
+    "email": "user4@hostel.io",
     "role": "user",
     "active": true,
-    "photo": "user-3.jpg",
+    "photo": "user-4.jpg",
     "password": "$2a$12$Q0grHjH9PXc6SxivC8m12.2mZJ9BbKcgFpwSG4Y1ZEII8HJVzWeyS"
   },
   {
     "_id": "5c8a1d5b0190b214360dc055",
     "name": "Omorilewa Adunni",
-    "email": "user@hostel.io",
+    "email": "user5@hostel.io",
     "role": "user",
     "active": true,
-    "photo": "user-3.jpg",
+    "photo": "user-5.jpg",
     "password": "$2a$12$Q0grHjH9PXc6SxivC8m12.2mZJ9BbKcgFpwSG4Y1ZEII8HJVzWeyS"
   },
   {
     "_id": "5c8a1d5b0190b214360dc055",
     "name": "Okeowo Abdul-Qudus",
-    "email": "user@hostel.io",
+    "email": "user6@hostel.io",
     "role": "user",
     "active": true,
-    "photo": "user-3.jpg",
+    "photo": "user-6.jpg",
     "password": "$2a$12$Q0grHjH9PXc6SxivC8m12.2mZJ9BbKcgFpwSG4Y1ZEII8HJVzWeyS"
   },
   {
     "_id": "5c8a1d5b0190b214360dc056",
     "name": "Adufe yusuf",
-    "email": "user@hostel.io",
+    "email": "user7@hostel.io",
     "role": "user",
     "active": true,
-    "photo": "user-3.jpg",
+    "photo": "user-7.jpg",
+    "password": "$2a$12$Q0grHjH9PXc6SxivC8m12.2mZJ9BbKcgFpwSG4Y1ZEII8HJVzWeyS"
+  },
+  {
+    "_id": "5c8a1d5b0190b214360dc055",
+    "name": "Wasiu Bakare",
+    "email": "user6@hostel.io",
+    "role": "care-taker",
+    "active": true,
+    "photo": "user-9.jpg",
+    "password": "$2a$12$Q0grHjH9PXc6SxivC8m12.2mZJ9BbKcgFpwSG4Y1ZEII8HJVzWeyS"
+  },
+  {
+    "_id": "5c8a1d5b0190b214360dc056",
+    "name": "Nimota Ogunbanjo",
+    "email": "user10@hostel.io",
+    "role": "hostel-owner",
+    "active": true,
+    "photo": "user-10.jpg",
     "password": "$2a$12$Q0grHjH9PXc6SxivC8m12.2mZJ9BbKcgFpwSG4Y1ZEII8HJVzWeyS"
   }
 ]
