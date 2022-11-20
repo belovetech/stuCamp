@@ -42,6 +42,12 @@ const userSchema = new mongoose.Schema({
       message: 'Passwords are not the same!',
     },
   },
+  /*
+  hostel: {
+    type: mongoose.Schema.ObjectId,
+    ref: 'Hostel',
+    required: [true, 'User must belong to a hostel'],
+  },*/
   passwordChangedAt: Date,
   passwordResetToken: String,
   passwordResetExpires: Date,
@@ -77,6 +83,15 @@ userSchema.pre(/^find/, function (next) {
   this.find({ active: { $ne: false } });
   next();
 });
+
+/* 
+userSchema.pre(/^find/, function (next) {
+  this.populate({
+    path: 'hostel',
+    select: 'name',
+  });
+  next();
+});*/
 
 // Document instance methods.
 // This methods will be available on every instance of the document

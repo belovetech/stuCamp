@@ -10,7 +10,9 @@
     "summary": "Stable electricity, running water, fenced,  and much more",
     "description": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nIrure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     "imageCover": "hostel-1-cover.jpg",
-    "images": ["hostel-1-1.jpg", "hostel-1-2.jpg", "hostel-1-3.jpg"]
+    "images": ["hostel-1-1.jpg", "hostel-1-2.jpg", "hostel-1-3.jpg"],
+    "location": "oke-odo",
+    "tenants": ["6378fb22bc8f75aaf8d050ae", "6378c0de2f1d087476b512ee"]
   },
   {
     "id": 1,
@@ -23,7 +25,9 @@
     "summary": "Stable electricity, running water, fenced,  and much more",
     "description": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nIrure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     "imageCover": "hostel-2-cover.jpg",
-    "images": ["hostel-2-1.jpg", "hostel-2-2.jpg", "hostel-2-3.jpg"]
+    "images": ["hostel-2-1.jpg", "hostel-2-2.jpg", "hostel-2-3.jpg"],
+    "location": "oke-odo",
+    "tenants": ["6378fb22bc8f75aaf8d050ae", "6378c0de2f1d087476b512ee"]
   },
   {
     "id": 2,
@@ -36,7 +40,9 @@
     "summary": "Stable electricity, well-water",
     "description": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nIrure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     "imageCover": "hostel-3-cover.jpg",
-    "images": ["hostel-3-1.jpg", "hostel-3-2.jpg", "hostel-3-3.jpg"]
+    "images": ["hostel-3-1.jpg", "hostel-3-2.jpg", "hostel-3-3.jpg"],
+    "location": "oke-odo",
+    "tenants": ["6378fb22bc8f75aaf8d050ae", "6378c0de2f1d087476b512ee"]
   },
   {
     "id": 3,
@@ -49,7 +55,8 @@
     "summary": "Stable electricity, well-water",
     "description": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nIrure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     "imageCover": "hostel-3-cover.jpg",
-    "images": ["hostel-3-1.jpg", "hostel-3-2.jpg", "hostel-3-3.jpg"]
+    "images": ["hostel-3-1.jpg", "hostel-3-2.jpg", "hostel-3-3.jpg"],
+    "location": "Tipper garage"
   },
   {
     "id": 4,
@@ -62,7 +69,8 @@
     "summary": "Stable electricity, running water, fenced, security and much more",
     "description": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nIrure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     "imageCover": "hostel-4-cover.jpg",
-    "images": ["hostel-4-1.jpg", "hostel-4-2.jpg", "hostel-4-3.jpg"]
+    "images": ["hostel-4-1.jpg", "hostel-4-2.jpg", "hostel-4-3.jpg"],
+    "location": "Sanrab"
   },
   {
     "id": 5,
@@ -75,7 +83,8 @@
     "summary": "Stable electricity, Free wifi, running water, fenced, security and much more",
     "description": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nIrure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     "imageCover": "hostel-5-cover.jpg",
-    "images": ["hostel-5-1.jpg", "hostel-5-2.jpg", "hostel-5-3.jpg"]
+    "images": ["hostel-5-1.jpg", "hostel-5-2.jpg", "hostel-5-3.jpg"],
+    "location": "Sanrab"
   },
   {
     "id": 6,
@@ -88,7 +97,9 @@
     "summary": "Stable electricity, gym, free-wifi, running water and much more",
     "description": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nIrure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     "imageCover": "hostel-6-cover.jpg",
-    "images": ["hostel-6-1.jpg", "hostel-6-2.jpg", "hostel-6-3.jpg"]
+    "images": ["hostel-6-1.jpg", "hostel-6-2.jpg", "hostel-6-3.jpg"],
+    "location": "oke-odo",
+    "tenants": ["6378fb22bc8f75aaf8d050ae", "6378c0de2f1d087476b512ee"]
   },
   {
     "id": 7,
@@ -101,7 +112,9 @@
     "summary": "Stable electricity, well-water",
     "description": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nIrure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     "imageCover": "hostel-7-cover.jpg",
-    "images": ["hostel-7-1.jpg", "hostel-7-2.jpg", "hostel-7-3.jpg"]
+    "images": ["hostel-7-1.jpg", "hostel-7-2.jpg", "hostel-7-3.jpg"],
+    "location": "oke-odo",
+    "tenants": ["6378fb22bc8f75aaf8d050ae", "6378c0de2f1d087476b512ee"]
   },
   {
     "id": 8,
@@ -114,7 +127,9 @@
     "summary": "Stable electricity, free-wifi, library",
     "description": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nIrure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     "imageCover": "hostel-3-cover.jpg",
-    "images": ["hostel-3-1.jpg", "hostel-3-2.jpg", "hostel-3-3.jpg"]
+    "images": ["hostel-3-1.jpg", "hostel-3-2.jpg", "hostel-3-3.jpg"],
+    "location": "sanrab",
+    "tenants": ["6378fb22bc8f75aaf8d050ae", "6378c0de2f1d087476b512ee"]
   },
   {
     "id": 9,
@@ -127,6 +142,12 @@
     "summary": "fair electricity, no-wifi",
     "description": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nIrure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     "imageCover": "hostel-9-cover.jpg",
-    "images": ["hostel-9-1.jpg", "hostel-9-2.jpg", "hostel-9-3.jpg"]
+    "images": ["hostel-9-1.jpg", "hostel-9-2.jpg", "hostel-9-3.jpg"],
+    "location": "sanrab",
+    "tenants": [
+      "6378fb22bc8f75aaf8d050ae",
+      "6378c0de2f1d087476b512ee",
+      "6378fb99bc8f75aaf8d050b2"
+    ]
   }
 ]
