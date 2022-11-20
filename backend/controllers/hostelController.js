@@ -1,7 +1,5 @@
-const APIfeatures = require('./../utils/apifeatures');
-const AppError = require('./../utils/appError');
-const catchAsync = require('./../utils/catchAsync');
-const Hostels = require('./../models/hostelModel');
+const Hostel = require('./../models/hostelModel');
+const factory = require('./factoryController');
 
 // HOSTEL ROUTER MIDDLEWARE
 exports.aliasTopCheap = (req, res, next) => {
@@ -12,8 +10,16 @@ exports.aliasTopCheap = (req, res, next) => {
   next();
 };
 
+exports.getAllHostels = factory.getAll(Hostel);
+exports.getHostel = factory.getOne(Hostel, { path: 'reviews' });
+exports.createHostel = factory.createOne(Hostel);
+exports.updateHostel = factory.updateOne(Hostel);
+exports.deleteHostel = factory.deleteOne(Hostel);
+
+/*
+BEFORE FACTORY CONTROLLER WAS CREATED
 exports.getAllHostels = catchAsync(async (req, res, next) => {
-  const features = new APIfeatures(Hostels.find(), req.query)
+  const features = new APIfeatures(Hostel.find(), req.query)
     .filter()
     .sort()
     .limitFields()
@@ -31,8 +37,9 @@ exports.getAllHostels = catchAsync(async (req, res, next) => {
   });
 });
 
+
 exports.getHostel = catchAsync(async (req, res, next) => {
-  const hostel = await Hostels.findById(req.params.id).populate('reviews');
+  const hostel = await Hostel.findById(req.params.id).populate('reviews');
 
   if (!hostel) {
     return next(new AppError('Hostel was not found', 404));
@@ -47,7 +54,7 @@ exports.getHostel = catchAsync(async (req, res, next) => {
 });
 
 exports.createHostel = catchAsync(async (req, res, next) => {
-  const hostel = await Hostels.create(req.body);
+  const hostel = await Hostel.create(req.body);
 
   res.status(201).json({
     status: 'success',
@@ -55,10 +62,10 @@ exports.createHostel = catchAsync(async (req, res, next) => {
       hostel,
     },
   });
-});
+}); 
 
 exports.updateHostel = catchAsync(async (req, res, next) => {
-  const hostel = await Hostels.findByIdAndUpdate(req.params.id, req.body, {
+  const hostel = await Hostel.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
     runValidators: true,
   });
@@ -76,14 +83,14 @@ exports.updateHostel = catchAsync(async (req, res, next) => {
 });
 
 exports.deleteHostel = catchAsync(async (req, res, next) => {
-  const hostel = await Hostels.findByIdAndDelete(req.params.id);
+  const hostel = await Hostel.findByIdAndDelete(req.params.id);
 
   if (!hostel) {
     return next(new AppError('Hostel was not found', 404));
   }
 
-  res.status(200).json({
+  res.status(204).json({
     status: 'success',
     data: null,
   });
-});
+});*/
