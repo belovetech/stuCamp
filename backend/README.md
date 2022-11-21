@@ -35,6 +35,8 @@ You can either run it as development or prodcution mode. Each time you open a ne
 
 ### API Reference
 
+[Stucamp API full documentation](https://documenter.getpostman.com/view/21714199/2s8YmUKefc)
+
 ### Getting Started
 
 Base URL: Currently this application is only hosted locally. The backend is hosted at http://127.0.0.1:3000/api/v1
