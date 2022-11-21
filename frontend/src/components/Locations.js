@@ -5,17 +5,17 @@ import { cities } from "../constants";
 const Locations = () => {
   return (
     <div>
-      {/* <motion.div>
+      <motion.div>
         <motion.div>
           {cities.map(city => (
             <motion.div>
               <div className={`w-[230px] h-[126px]`}>
-                hello
+                <img src={city.img} alt={`image of ${city.name}`} />
               </div>
             </motion.div>
           ))}
         </motion.div>
-      </motion.div> */}
+      </motion.div>
     </div>
   )
 }

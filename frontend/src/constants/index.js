@@ -1,4 +1,4 @@
-
+import { abuja } from "../components"
 
 
 export const navLinks = [
@@ -17,22 +17,22 @@ export const navLinks = [
   ];
 
 export const cities = [
-    { name: 'Abuja', href: '#', img: "../assets/abuja.jpg", sites: '3' },
-    { name: 'Anambra', href: '#', img: "../assets/abuja.jpg", sites: '3' },
-    { name: 'Bayelsa', href: '#', img: "../assets/abuja.jpg", sites: '3' },
-    { name: 'Borno', href: '#', img: "../assets/abuja.jpg", sites: '3' },
-    { name: 'Delta', href: '#', img: "../assets/abuja.jpg", sites: '3' },
-    { name: 'Edo', href: '#', img: "../assets/abuja.jpg", sites: '3' },
-    { name: 'Enugu', href: '#', img: "../assets/abuja.jpg", sites: '3'},
-    { name: 'Imo', href: '#', img: "../assets/abuja.jpg", sites: '3' },
-    { name: 'Kano', href: '#', img: "../assets/abuja.jpg", sites: '3' },
-    { name: 'Lagos', href: '#', img: "../assets/abuja.jpg", sites: '3' },
-    { name: 'Ogun', href: '#', img: "../assets/abuja.jpg", sites: '3' },
-    { name: 'Ondo', href: '#', img: "../assets/abuja.jpg", sites: '3' },
-    { name: 'Osun', href: '#', img: "../assets/abuja.jpg", sites: '3' },
-    { name: 'Oyo', href: '#', img: "../assets/abuja.jpg", sites: '3' },
-    { name: 'Rivers', href: '#', img: "../assets/abuja.jpg", sites: '3' },
-    { name: 'Sokoto', href: '#', img: "../assets/abuja.jpg", sites: '3' }
+    { name: 'Abuja', href: '#', img: abuja, sites: '3' },
+    { name: 'Anambra', href: '#', img: abuja, sites: '3' },
+    { name: 'Bayelsa', href: '#', img: abuja, sites: '3' },
+    { name: 'Borno', href: '#', img: abuja, sites: '3' },
+    { name: 'Delta', href: '#', img: abuja, sites: '3' },
+    { name: 'Edo', href: '#', img: abuja, sites: '3' },
+    { name: 'Enugu', href: '#', img: abuja, sites: '3'},
+    { name: 'Imo', href: '#', img: abuja, sites: '3' },
+    { name: 'Kano', href: '#', img: abuja, sites: '3' },
+    { name: 'Lagos', href: '#', img: abuja, sites: '3' },
+    { name: 'Ogun', href: '#', img: abuja, sites: '3' },
+    { name: 'Ondo', href: '#', img: abuja, sites: '3' },
+    { name: 'Osun', href: '#', img: abuja, sites: '3' },
+    { name: 'Oyo', href: '#', img: abuja, sites: '3' },
+    { name: 'Rivers', href: '#', img: abuja, sites: '3' },
+    { name: 'Sokoto', href: '#', img: abuja, sites: '3' }
   ]
 
 // export const reviews = [
