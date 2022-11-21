@@ -1,18 +1,31 @@
 import Navbar from "./Navbar";
-import Button from "./Button";
+import Stats from "./Stats";
+import GetStarted from "./GetStarted";
 import Hero from "./Hero";
-import Popular from "./Popular";
-import Cities from "./Cities";
+import Search from "./Search";
+// import Locations from "./Locations";
 import Offers from "./Offers";
 import Reviews from "./Reviews";
 import Footer from "./Footer";
+import logo from '../assets/logo.png';
+import discount from '../assets/discount.svg';
+import search from '../assets/search.svg';
+import room from '../assets/room.jpg';
+import abuja from '../assets/abuja.jpg';
+import badge from '../assets/badge.svg'
 
 export {
+    logo,
+    discount,
+    room,
+    search,
+    badge,
+    abuja,
     Navbar,
-    Button,
+    Stats,
+    GetStarted,
     Hero,
-    Popular,
-    Cities,
+    Search,
     Offers,
     Reviews,
     Footer
