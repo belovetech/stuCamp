@@ -1,6 +1,6 @@
 import styles from './style';
 
-import { Navbar, Button, Hero, Popular, Cities, Offers, Reviews, Footer
+import { Navbar, Stats, Hero, Search, Offers, Reviews, Footer
 } from './components';
 
 const App = () =>  (
@@ -12,16 +12,16 @@ const App = () =>  (
         </div>
       </div>
 
-      <div className={`bg-primary ${styles.flexStart}`}>
+      <div className={`bg-secondary ${styles.flexStart}`}>
         <div className={`${styles.boxWidth}`}>
           <Hero />
+          <Stats />
         </div>
       </div>
 
-      <div className={`bg-primary ${styles.flexStart}`}>
+      <div className={`bg-white ${styles.flexStart}`}>
         <div className={`${styles.boxWidth}`}>
-          <Popular />
-          <Cities />
+          <Search />
           <Offers />
           <Reviews />
           <Footer />
