@@ -34,6 +34,9 @@ const reviewSchema = new mongoose.Schema(
   }
 );
 
+// prevent duplicate review from the same user on the same hostel
+reviewSchema.index({ hostel: 1, user: 1 }, { unique: true });
+
 reviewSchema.pre(/^find/, function (next) {
   //   this.populate({
   //     path: 'hostel',
@@ -64,6 +67,7 @@ reviewSchema.statics.calcAverageRatings = async function (hostelId) {
     },
   ]);
 
+  // Update ratingsAverage and ratingsQuantity based on the statistics
   await Hostel.findByIdAndUpdate(hostelId, {
     ratingsAverage: stats[0].avgRating,
     ratingsQuantity: stats[0].nRating,
@@ -81,6 +85,7 @@ reviewSchema.pre(/^findOneAnd/, async function (next) {
   next();
 });
 
+// Update the current ratingsAverage and ratingsQuantity
 reviewSchema.post(/^findOneAnd/, async function () {
   this.r.constructor.calcAverageRatings(this.r.hostel);
 });
