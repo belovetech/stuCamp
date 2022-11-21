@@ -13,6 +13,7 @@ const globalErrorHandler = require('./controllers/errorController');
 const hostelRouter = require('./routes/hostelRouter');
 const userRouter = require('./routes/userRouter');
 const reviewRouter = require('./routes/reviewRouter');
+const viewRouter = require('./routes/viewRouter');
 
 // insantiate express app
 const app = express();
@@ -64,6 +65,7 @@ app.use((req, res, next) => {
 });
 
 // ROUTES
+app.use('/', viewRouter);
 app.use('/api/v1/hostels', hostelRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/reviews', reviewRouter);

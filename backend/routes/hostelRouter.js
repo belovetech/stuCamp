@@ -14,6 +14,10 @@ router
   .get(hostelController.aliasTopCheap, hostelController.getAllHostels);
 
 router
+  .route('/get-location/:id')
+  .get(hostelController.getHostelByLocation, hostelController.getAllHostels);
+
+router
   .route('/')
   .get(hostelController.getAllHostels)
   .post(

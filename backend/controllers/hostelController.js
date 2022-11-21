@@ -6,7 +6,11 @@ exports.aliasTopCheap = (req, res, next) => {
   req.query.limit = '5';
   req.query.sort = 'price,-ratingsAverage';
   req.query.fields = 'name,price,type,ratingsAverage';
-  console.log(req.query);
+  next();
+};
+
+exports.getHostelByLocation = (req, res, next) => {
+  req.query.location = req.params.id;
   next();
 };
 

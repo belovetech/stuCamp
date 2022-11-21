@@ -73,6 +73,11 @@ const hostelSchema = new mongoose.Schema(
         ref: 'User',
       },
     ],
+    location: {
+      type: String,
+      trim: true,
+      required: [true, 'A hostel must have a location'],
+    },
   },
   {
     toJSON: { virtuals: true },
