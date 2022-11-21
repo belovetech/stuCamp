@@ -9,15 +9,15 @@ Follow instructions to install the latest version of nodejs for your platform in
 
 ### NPM Dependencies
 
-Once you have your virtual environment setup and running, install dependencies by naviging to the /backend directory and running:
+Once you have your virtual environment setup and running, install dependencies by navigating to the /backend directory and running:
 
-```
-npm install
+```BASH
+`npm install`
 ```
 
 This will install all of the required packages we selected within the package.json.
 
-#### Key Dependencies
+### Key Dependencies
 
 [Express](https://expressjs.com/) is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications
 
@@ -28,23 +28,25 @@ This will install all of the required packages we selected within the package.js
 From within the ./backend directory
 You can either run it as development or prodcution mode. Each time you open a new terminal session, run:
 
-```
-`npm run start:dev` for development mode
-`npm run start:prod` for production mode
+```BASH
+`npm run start:dev`  -  development mode
+`npm run start:prod` -  production mode
 ```
 
 ### API Reference
 
-#### Getting Started
+### Getting Started
 
 Base URL: Currently this application is only hosted locally. The backend is hosted at http://127.0.0.1:3000/api/v1
-Authentication: This version does not require authentication or API keys.
 
-#### Error Handling
+Authentication: Json Web Token (JWT) is used for authentication.
+NB: Only a successfully logged in admin and hostel owners can perform DELETE AND PATCH actions.
+
+### Error Handling
 
 Errors are returned as JSON in the following format:
 
-```
+```JSON
 {
     "status": "fail",
     "error": {
@@ -59,23 +61,23 @@ Errors are returned as JSON in the following format:
 
 The API will return four types of errors:
 
-```
+```JSON
 400 - bad request
 404 - resource not found
 401 - unauthorized
 500 - internal server error
 ```
 
-#### API Endpoints
+### API Endpoints
 
-#### Hostel Resources
+### Hostel Resources
 
 GET /hostels
 General: Returns a list of hostels.
 
 Sample: curl http://127.0.0.1:3000/hostels
 
-```
+```JSON
 {
     "status": "success",
     "results": 5,
@@ -91,6 +93,7 @@ Sample: curl http://127.0.0.1:3000/hostels
                 "name": "Learners' garden hostel",
                 "type": "self-contain",
                 "price": 95000,
+                "ratingsAverage": 2.5,
                 "roomsAvailable": 12,
                 "closeBy": true,
                 "summary": "Stable electricity, running water, fenced,  and much more",
@@ -108,6 +111,7 @@ Sample: curl http://127.0.0.1:3000/hostels
                 "name": "King'n'Queen hostel",
                 "type": "self-contain",
                 "price": 75000,
+                "ratingsAverage": 3.5,
                 "roomsAvailable": 6,
                 "closeBy": true,
                 "summary": "Stable electricity, running water, fenced,  and much more",
@@ -125,6 +129,7 @@ Sample: curl http://127.0.0.1:3000/hostels
                 "name": "Arafims hostel",
                 "type": "single-room",
                 "price": 45000,
+                "ratingsAverage": 3.5,
                 "roomsAvailable": 10,
                 "closeBy": false,
                 "summary": "Stable electricity, well-water",
@@ -142,6 +147,7 @@ Sample: curl http://127.0.0.1:3000/hostels
                 "name": "Gulf pearl apartment",
                 "type": "apartment",
                 "price": 155000,
+                "ratingsAverage": 2.5,
                 "roomsAvailable": 2,
                 "closeBy": true,
                 "summary": "Stable electricity, running water, fenced, security and much more",
@@ -159,6 +165,7 @@ Sample: curl http://127.0.0.1:3000/hostels
                 "name": "Queens hostel",
                 "type": "self-contain",
                 "price": 45000,
+                "ratingsAverage": 3.5,
                 "roomsAvailable": 5,
                 "closeBy": false,
                 "summary": "Stable electricity, well-water",
@@ -172,11 +179,11 @@ Sample: curl http://127.0.0.1:3000/hostels
 ```
 
 GET /hostels/:id
-General: Returns a list of hostels.
+General: Returns a single hostel based on id.
 
 Sample: curl http://127.0.0.1:3000/hostels/6370066e0bc496358dba995d
 
-```
+```JSON
 {
     "status": "success",
     "data": {
@@ -190,24 +197,75 @@ Sample: curl http://127.0.0.1:3000/hostels/6370066e0bc496358dba995d
             "name": "Learners' garden hostel",
             "type": "self-contain",
             "price": 95000,
+            "ratingsAverage": 4.5,
             "roomsAvailable": 12,
             "closeBy": true,
             "summary": "Stable electricity, running water, fenced,  and much more",
             "description": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nIrure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
             "imageCover": "hostel-2-cover.jpg",
             "slug": "learners'-garden-hostel",
-            "__v": 0
         }
     }
 }
 ```
 
-POST /hostels
-General: Returns a list of hostels.
+GET /top-5-cheap
+General: Returns top 5 cheap hostels.
 
-Sample: curl -d '{"name": "unique mansion hostel": "type": "single-room"}' http://127.0.0.1:3000/hostels/6370066e0bc496358dba995d -H 'Content-Type: application/json' -X POST
+Sample: curl http://127.0.0.1:3000/hostels/top-5-cheap
 
+```JSON
+{
+    "status": "success",
+    "results": 5,
+    "data": {
+        "hostels": [
+            {
+                "_id": "6374a699719ad05f690e3148",
+                "name": "Rubiks hostel",
+                "type": "single-room",
+                "ratingsAverage": 4.5,
+                "price": 45000
+            },
+            {
+                "_id": "6374a699719ad05f690e3146",
+                "name": "Pyramid hostel",
+                "type": "self-contain",
+                "ratingsAverage": 4.5,
+                "price": 45000
+            },
+            {
+                "_id": "6374a699719ad05f690e3144",
+                "name": "Queens hostel",
+                "type": "self-contain",
+                "ratingsAverage": 3.5,
+                "price": 45000
+            },
+            {
+                "_id": "6374a699719ad05f690e3143",
+                "name": "Arafims hostel",
+                "type": "single-room",
+                "ratingsAverage": 2.5,
+                "price": 45000
+            },
+            {
+                "_id": "6374a699719ad05f690e314a",
+                "name": "Kikelomo hostel",
+                "type": "single-room",
+                "ratingsAverage": 3.5,
+                "price": 55000
+            }
+        ]
+    }
+}
 ```
+
+POST /hostels
+General: Returns a new hostel.
+
+Sample: curl -d '{"name": "unique mansion hostel": "type": "single-room"}' http://127.0.0.1:3000/hostels -H 'Content-Type: application/json' -X POST
+
+```JSON
 {
     "status": "success",
     "data": {
@@ -220,18 +278,17 @@ Sample: curl -d '{"name": "unique mansion hostel": "type": "single-room"}' http:
             "closeBy": true,
             "summary": "Stable electricity, running water, fenced,  and much more",
             "slug": "unique-mansion-hostel",
-            "__v": 0
         }
     }
 }
 ```
 
-PUT /hostels/:id
-General: Returns a list of hostels.
+PATCH /hostels/:id
+General: Returns updated hostel.
 
-Sample: curl -d '{"name": "unique mansion hostel"}' http://127.0.0.1:3000/hostels/6370066e0bc496358dba995d -H 'Content-Type: application/json' -X PUT
+Sample: curl -d '{"name": "unique mansion hostel"}' http://127.0.0.1:3000/hostels/6370066e0bc496358dba995d -H 'Content-Type: application/json' -X PATCH
 
-```
+```JSON
 {
     "status": "success",
     "data": {
@@ -243,19 +300,212 @@ Sample: curl -d '{"name": "unique mansion hostel"}' http://127.0.0.1:3000/hostel
             "roomsAvailable": 12,
             "closeBy": true,
             "summary": "Stable electricity, running water, fenced,  and much more",
-            "slug": "unique-mansion-hostel",
-            "__v": 0
+            "slug": "unique-mansion-hostel"
         }
     }
 }
 ```
 
 DELETE /hostels/:id
-General: Returns a list of hostels.
+General: Returns null
 
 Sample: curl -X DELETE http://127.0.0.1:3000/hostels/6370066e0bc496358dba995d
 
+```JSON
+{
+    "status": "success",
+    "data": null
+}
 ```
+
+### Authentication
+
+POST /singup
+General: Returns a newly created user.
+
+Sample: curl -d {"name": "Ben Ken", "email": "benken@stucamp.io"} http://127.0.0.1:3000/users/signup -H "Content-Type: application/json" -X POST
+
+```JSON
+{
+    "status": "success",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6CJ9.eyJpZCI6IjYzNzQ3Z2ODU3OTAyNywzU1MDI3fQ.vill0T-ThQbuA6z5EX1Qg7W8iMqLs",
+    "data": {
+        "user": {
+            "_id": "63747ed2bd9b1e1ab9b89065",
+            "name": "Ben Ken",
+            "email": "benken@stucamp.io",
+            "role": "user"
+        }
+    }
+}
+```
+
+POST /login
+General: Returns JWT token issued to the user.
+
+Sample: curl -d {"email": "benken@stucamp.io": "password": "ben123"} http://127.0.0.1:3000/users/login -H "Content-Type: application/json" -X POST
+
+```JSON
+{
+    "status": "success",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6CJ9.eyJpZCI6IjYzNzQ3Z2ODU3OTAyNywzU1MDI3fQ.vill0T-ThQbuA6z5EX1Qg7W8iMqLs",
+    "data": {
+        "user": {
+            "_id": "63747ed2bd9b1e1ab9b89065",
+            "name": "Ben Ken",
+            "email": "benken@stucamp.io",
+            "role": "user"
+        }
+    }
+}
+```
+
+POST /forgotPassword
+General: Reset password will be sent to the user's email address.
+
+Sample: curl -d {"email": "benken@stucamp.io"} http://127.0.0.1:3000/users/forgotPassword -H "Content-Type: application/json" -X POST
+
+```JSON
+{
+    "status": "success",
+    "token": "Token sent to email!",
+}
+```
+
+PATCH /resetPassword
+General: Return new password along with user's data.
+
+Sample: curl -d {"password": "test123", "passwordConfirm": "test123"} http://127.0.0.1:3000/users/resetPassword -H "Content-Type: application/json" -X PATCH
+
+```JSON
+{
+    "status": "success",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6CJ9.eyJpZCI6IjYzNzQ3Z2ODU3OTAyNywzU1MDI3fQ.vill0T-ThQbuA6z5EX1Qg7W8iMqLs",
+    "data": {
+        "user": {
+            "_id": "63747ed2bd9b1e1ab9b89065",
+            "name": "Ben Ken",
+            "email": "benken@stucamp.io",
+            "role": "user"
+        }
+    }
+}
+```
+
+PATCH /updatePassword
+General: Return updated user's data.
+
+Sample: curl -d {"passwordCurrent": "abeeb1234", "password": "test123", "passwordConfirm": "test123"} http://127.0.0.1:3000/users/resetPassword -H "Content-Type: application/json" -X PATCH
+
+```JSON
+{
+    "status": "success",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6CJ9.eyJpZCI6IjYzNzQ3Z2ODU3OTAyNywzU1MDI3fQ.vill0T-ThQbuA6z5EX1Qg7W8iMqLs",
+    "data": {
+        "user": {
+            "_id": "63747ed2bd9b1e1ab9b89065",
+            "name": "Ben Ken",
+            "email": "benken@stucamp.io",
+            "role": "user"
+        }
+    }
+}
+```
+
+### User Resources
+
+GET /users
+General: Returns all users.
+
+Sample: curl http://127.0.0.1:3000/users/
+
+```JSON
+{
+    "status": "success",
+    "results": 4,
+    "data": {
+        "users": [
+            {
+                "role": "admin",
+                "_id": "637674e56e9820a7ae54f419",
+                "name": "Samuel Adebayo",
+                "email": "samuel@stucamp.io",
+                "__v": 0,
+                "passwordChangedAt": "2022-11-17T18:24:11.658Z"
+            },
+            {
+                "role": "admin",
+                "_id": "6376b57a36a6f2ef3b948abc",
+                "name": "Opeyemi Surajudeen",
+                "email": "suharj@stucamp.io",
+                "__v": 0
+            },
+            {
+                "role": "hostel-owner",
+                "_id": "6378bea3c1e56e7246474ec5",
+                "name": "Arafims",
+                "email": "arafims@stucamp.io",
+                "__v": 0
+            },
+            {
+                "role": "care-taker",
+                "_id": "6378c0de2f1d087476b512ee",
+                "name": "Hostel management company",
+                "email": "hmc@stucamp.io",
+                "__v": 0
+            }
+        ]
+    }
+}
+```
+
+GET /users/:id
+General: Returns user based on id.
+
+Sample: curl http://127.0.0.1:3000/users/63747ed2bd9b1e1ab9b89065
+
+```JSON
+{
+    "status": "success",
+    "data": {
+        "user": {
+            "role": "user",
+            "_id": "637674e56e9820a7ae54f419",
+            "name": "Samuel Adebayo",
+            "email": "samuel@stucamp.io",
+            "passwordChangedAt": "2022-11-17T18:24:11.658Z"
+        }
+    }
+}
+```
+
+Description: The JWT token generated when user logged in is used to identify the current user. DELETE AND PATCH operation will be perform on the current user.
+
+PATCH /users/updateMe
+General: Returns updated data.
+
+Sample: curl -d {"name": "Abeeb Raheem"} http://127.0.0.1:3000/users/updateMe -H "Content-Type: application/json" -X PATCH
+
+```JSON
+{
+    "status": "success",
+    "data": {
+        "user": {
+            "role": "user",
+            "_id": "6376aff5f69835e82183bdeb",
+            "name": "Abeeb Raheem",
+            "email": "abeeb@stucamp.io",
+        }
+    }
+}
+```
+
+DELETE /users/deleteMe
+General: Returns null.
+
+Sample: curl http://127.0.0.1:3000/users/deleteMe -H "Content-Type: application/json" -X DELETE
+
+```JSON
 {
     "status": "success",
     "data": null

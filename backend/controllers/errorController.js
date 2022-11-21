@@ -1,5 +1,6 @@
 const AppError = require('./../utils/appError');
 
+// GLOBAL PRODUCTION ERROR HANDLERS
 const handleCastErrorDB = err => {
   const msg = `Invalid ${err.path}: ${err.value}.`;
   return new AppError(msg, 400);
@@ -18,6 +19,13 @@ const handleValidationErrorDB = err => {
   return new AppError(msg, 400);
 };
 
+const handleJWTError = () =>
+  new AppError('Invalid token. please login again!', 401);
+
+const handleJWTExpiredError = () =>
+  new AppError('Your token has expired. Please login again!', 401);
+
+// DEVELOPMENT ERROR FORMAT
 const sendErrorDev = (err, res) => {
   res.status(err.statusCode).json({
     status: err.status,
@@ -27,6 +35,7 @@ const sendErrorDev = (err, res) => {
   });
 };
 
+// PRODUCTION ERROR FORMAT
 const sendErrorProd = (err, res) => {
   // Operational, trusted error: send msg to client
   if (err.isOperational) {
@@ -57,10 +66,11 @@ module.exports = (err, req, res, next) => {
   } else if (process.env.NODE_ENV === 'production') {
     let error = { ...err };
     if (error.name === 'CastError') error = handleCastErrorDB(error);
-    if (err.code === 11000) err = handleDuplicateErrorDB(error);
+    if (error.code === 11000) error = handleDuplicateErrorDB(error);
     if (error.name === 'ValidationError')
       error = handleValidationErrorDB(error);
-
+    if (error.name === 'JsonWebTokenError') error = handleJWTError();
+    if (error.name === 'TokenExpiredError') error = handleJWTExpiredError();
     sendErrorProd(error, res);
   }
 };

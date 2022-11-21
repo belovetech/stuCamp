@@ -1,65 +1,74 @@
 [
   {
-    "_id": "5c8a1d5b0190b214360dc051",
+    "_id": "637a0db02ad3631a74214773",
     "name": "Abeeb Raheem",
-    "email": "admin@hostel.io",
+    "email": "admin1@stucamp.io",
     "role": "admin",
     "active": true,
     "photo": "user-1.jpg",
-    "password": "$2a$12$Q0grHjH9PXc6SxivC8m12.2mZJ9BbKcgFpwSG4Y1ZEII8HJVzWeyS"
+    "password": "$2a$12$VSZo7Dd.4OLD3Vl5mLtoc.NCy28ceQ.wVj303q6JRs95boPooLKmC"
   },
   {
-    "_id": "5c8a1d5b0190b214360dc052",
+    "_id": "637a0df47005341b525ebb59",
     "name": "Samuel Adebayo",
-    "email": "admin@hostel.io",
+    "email": "admin2@stucamp.io",
     "role": "admin",
     "active": true,
     "photo": "user-2.jpg",
-    "password": "$2a$12$Q0grHjH9PXc6SxivC8m12.2mZJ9BbKcgFpwSG4Y1ZEII8HJVzWeyS"
+    "password": "$2a$12$wdP3ahZ9cBS3r/zZQ4Ifced2488JEpZo/ozqamMMVxT7gU5MJm9J6"
   },
   {
     "_id": "5c8a1d5b0190b214360dc053",
     "name": "Opeyemi Odebode",
-    "email": "admin@hostel.io",
+    "email": "admin3@hostel.io",
     "role": "admin",
     "active": true,
     "photo": "user-3.jpg",
-    "password": "$2a$12$Q0grHjH9PXc6SxivC8m12.2mZJ9BbKcgFpwSG4Y1ZEII8HJVzWeyS"
+    "password": "$2a$12$koxHBNYYLfSjMtbxx9oliOLi5odv3dWxkvcVDOgSzLC/v/37ucJv2"
   },
   {
-    "_id": "5c8a1d5b0190b214360dc054",
-    "name": "Omorilewa Adunni",
-    "email": "user@hostel.io",
+    "_id": "637a0d21f2a73a18dc999e23",
+    "name": "shukurat Olayiwola",
+    "email": "shukrat@stucamp.io",
     "role": "user",
     "active": true,
     "photo": "user-3.jpg",
-    "password": "$2a$12$Q0grHjH9PXc6SxivC8m12.2mZJ9BbKcgFpwSG4Y1ZEII8HJVzWeyS"
+    "password": "$2a$12$7gAzsH8RovfeYkMNTci91ux4gm8NAuKXeDns.fbTVgMKBTeuues9W"
   },
   {
-    "_id": "5c8a1d5b0190b214360dc055",
-    "name": "Omorilewa Adunni",
-    "email": "user@hostel.io",
-    "role": "user",
+    "_id": "637a123b2d60981f545deb8b",
+    "name": "Abiodun Olarenwaju",
+    "email": "abiodun@stucamp.io",
+    "role": "hostel-owner",
     "active": true,
-    "photo": "user-3.jpg",
-    "password": "$2a$12$Q0grHjH9PXc6SxivC8m12.2mZJ9BbKcgFpwSG4Y1ZEII8HJVzWeyS"
+    "photo": "user-4.jpg",
+    "password": "$2a$12$kAH/46v8S.Dyiw04tWIbyeBhHCVdChpENRjSVICI.wb5kH2KUv2na"
   },
   {
-    "_id": "5c8a1d5b0190b214360dc055",
-    "name": "Okeowo Abdul-Qudus",
-    "email": "user@hostel.io",
-    "role": "user",
+    "_id": "637a12b0d7f067212d269764",
+    "name": "Onu Victor",
+    "email": "onu@stucamp.io",
+    "role": "hostel-owner",
     "active": true,
-    "photo": "user-3.jpg",
-    "password": "$2a$12$Q0grHjH9PXc6SxivC8m12.2mZJ9BbKcgFpwSG4Y1ZEII8HJVzWeyS"
+    "photo": "user-5.jpg",
+    "password": "$2a$12$ZW9V55Hzkq52kmtnLuLuDeG4MugaDPLch5mSdO7C/ftxQT5bp.s5G"
   },
   {
-    "_id": "5c8a1d5b0190b214360dc056",
-    "name": "Adufe yusuf",
-    "email": "user@hostel.io",
-    "role": "user",
+    "_id": "637a130b04b3fc21ec8a30cb",
+    "name": "Okeowo Abdul-qudus",
+    "email": "okeowo@stucamp.io",
+    "role": "care-taker",
     "active": true,
-    "photo": "user-3.jpg",
-    "password": "$2a$12$Q0grHjH9PXc6SxivC8m12.2mZJ9BbKcgFpwSG4Y1ZEII8HJVzWeyS"
+    "photo": "user-6.jpg",
+    "password": "$2a$12$9wns9pGjn3LC6kYqam3hX.noLuwH2xDH6G.txqaXjmOU2o4hjbL7."
+  },
+  {
+    "_id": "637a1362d436c922d8bfc0a3",
+    "name": "Adufe Yusuf",
+    "email": "adufe@stucamp.io",
+    "role": "care-taker",
+    "active": true,
+    "photo": "user-7.jpg",
+    "password": "$2a$12$qrT8kJj9leAQw5/8N.akqOLrig6Ha8ZuLJp93b.m2IU31ELKmbPyW"
   }
 ]
