@@ -81,13 +81,14 @@ reviewSchema.post('save', function () {
 
 // Get current updated review
 reviewSchema.pre(/^findOneAnd/, async function (next) {
-  this.r = await this.findOne;
+  this.r = await this.findOne();
+  console.log(this.r);
   next();
 });
 
 // Update the current ratingsAverage and ratingsQuantity
 reviewSchema.post(/^findOneAnd/, async function () {
-  this.r.constructor.calcAverageRatings(this.r.hostel);
+  await this.r.constructor.calcAverageRatings(this.r.hostel);
 });
 
 const Review = mongoose.model('Review', reviewSchema);
