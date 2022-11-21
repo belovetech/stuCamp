@@ -62,23 +62,23 @@ export const cities = [
 //     },
 //   ];
 
-// export const stats = [
-//     {
-//       id: "stats-1",
-//       title: "Customer service",
-//       value: "+50k",
-//     },
-//     {
-//       id: "stats-2",
-//       title: "Positive customer reviews",
-//       value: "+10k",
-//     },
-//     {
-//       id: "stats-3",
-//       title: "5 star rating on Play store",
-//       value: "+15k",
-//     },
-//   ];
+export const stats = [
+  {
+    id: "stats-1",
+    title: "Active Users",
+    value: "+2700",
+  },
+  {
+    id: "stats-2",
+    title: "Positive customer reviews",
+    value: "+10k",
+  },
+  {
+    id: "stats-3",
+    title: "5 star rating on Google reviews",
+    value: "+15k",
+  },
+];
 
 //   export const socialMedia = [
 //     {
