@@ -24,9 +24,11 @@ const hostelSchema = new mongoose.Schema(
     },
     ratingsAverage: {
       type: Number,
+      default: 4.5,
       required: [true, 'A hostel must have a rating average'],
       min: [1, 'A hostel rating must above 1.0'],
       max: [5, 'A hostel rating must below 5.0 '],
+      set: val => Math.round(val * 10) / 10, // 4.666 -> 46.6666 -> 46.7
     },
     ratingsQuantity: {
       type: Number,
