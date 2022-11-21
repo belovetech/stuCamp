@@ -3,7 +3,7 @@ import Stats from "./Stats";
 import GetStarted from "./GetStarted";
 import Hero from "./Hero";
 import Search from "./Search";
-// import Locations from "./Locations";
+import Locations from "./Locations";
 import Offers from "./Offers";
 import Reviews from "./Reviews";
 import Footer from "./Footer";
@@ -26,6 +26,7 @@ export {
     GetStarted,
     Hero,
     Search,
+    Locations,
     Offers,
     Reviews,
     Footer

@@ -17,22 +17,22 @@ export const navLinks = [
   ];
 
 export const cities = [
-    { name: 'Abuja', href: '#' },
-    { name: 'Anambra', href: '#' },
-    { name: 'Bayelsa', href: '#' },
-    { name: 'Borno', href: '#' },
-    { name: 'Delta', href: '#' },
-    { name: 'Edo', href: '#' },
-    { name: 'Enugu', href: '#'},
-    { name: 'Imo', href: '#' },
-    { name: 'Kano', href: '#' },
-    { name: 'Lagos', href: '#' },
-    { name: 'Ogun', href: '#' },
-    { name: 'Ondo', href: '#' },
-    { name: 'Osun', href: '#' },
-    { name: 'Oyo', href: '#' },
-    { name: 'Rivers', href: '#' },
-    { name: 'Sokoto', href: '#' }
+    { name: 'Abuja', href: '#', img: "../assets/abuja.jpg", sites: '3' },
+    { name: 'Anambra', href: '#', img: "../assets/abuja.jpg", sites: '3' },
+    { name: 'Bayelsa', href: '#', img: "../assets/abuja.jpg", sites: '3' },
+    { name: 'Borno', href: '#', img: "../assets/abuja.jpg", sites: '3' },
+    { name: 'Delta', href: '#', img: "../assets/abuja.jpg", sites: '3' },
+    { name: 'Edo', href: '#', img: "../assets/abuja.jpg", sites: '3' },
+    { name: 'Enugu', href: '#', img: "../assets/abuja.jpg", sites: '3'},
+    { name: 'Imo', href: '#', img: "../assets/abuja.jpg", sites: '3' },
+    { name: 'Kano', href: '#', img: "../assets/abuja.jpg", sites: '3' },
+    { name: 'Lagos', href: '#', img: "../assets/abuja.jpg", sites: '3' },
+    { name: 'Ogun', href: '#', img: "../assets/abuja.jpg", sites: '3' },
+    { name: 'Ondo', href: '#', img: "../assets/abuja.jpg", sites: '3' },
+    { name: 'Osun', href: '#', img: "../assets/abuja.jpg", sites: '3' },
+    { name: 'Oyo', href: '#', img: "../assets/abuja.jpg", sites: '3' },
+    { name: 'Rivers', href: '#', img: "../assets/abuja.jpg", sites: '3' },
+    { name: 'Sokoto', href: '#', img: "../assets/abuja.jpg", sites: '3' }
   ]
 
 // export const reviews = [

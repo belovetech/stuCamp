@@ -1,6 +1,6 @@
 import styles from './style';
 
-import { Navbar, Stats, Hero, Search, Offers, Reviews, Footer
+import { Navbar, Stats, Hero, Search, Locations, Offers, Reviews, Footer
 } from './components';
 
 const App = () =>  (
@@ -22,6 +22,7 @@ const App = () =>  (
       <div className={`bg-white ${styles.flexStart}`}>
         <div className={`${styles.boxWidth}`}>
           <Search />
+          <Locations />
           <Offers />
           <Reviews />
           <Footer />
