@@ -22,6 +22,11 @@ const App = () =>  (
       <div className={`bg-white ${styles.flexStart}`}>
         <div className={`${styles.boxWidth}`}>
           <Search />
+        </div>
+      </div>
+
+      <div className={`bg-white`}>
+        <div className={`w-full`}>
           <Locations />
           <Offers />
           <Reviews />

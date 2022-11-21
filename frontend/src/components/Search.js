@@ -4,7 +4,7 @@ import SearchButton from './SearchButton';
 
 const Search = () => (
     <div className="flex flex-wrap">
-        <div className="relative -top-10 bg-tertiary flex flex-column w-fit">
+        <div className="relative -top-10 bg-tertiary rounded-2xl flex flex-column w-fit">
             <div className="px-6 py-6">
                 <p className="text-white mb-7">Find the best solution for you, your close-to-school home is waiting</p>
                 <div className="flex flex-wrap my-4">

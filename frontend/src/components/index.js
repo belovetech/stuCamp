@@ -12,7 +12,8 @@ import discount from '../assets/discount.svg';
 import search from '../assets/search.svg';
 import room from '../assets/room.jpg';
 import abuja from '../assets/abuja.jpg';
-import badge from '../assets/badge.svg'
+import badge from '../assets/badge.svg';
+import location from '../assets/location.svg'
 
 export {
     logo,
@@ -21,6 +22,7 @@ export {
     search,
     badge,
     abuja,
+    location,
     Navbar,
     Stats,
     GetStarted,

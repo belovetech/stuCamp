@@ -1,4 +1,4 @@
-import { abuja } from "../components"
+import { abuja } from "../components";
 
 
 export const navLinks = [
