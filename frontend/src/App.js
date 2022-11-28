@@ -28,8 +28,23 @@ const App = () =>  (
       <div className={`bg-white`}>
         <div className={`w-full`}>
           <Locations />
+        </div>
+      </div>
+
+      <div className={`bg-white ${styles.flexStart}`}>
+        <div className={`${styles.boxWidth}`}>
           <Offers />
+        </div>
+      </div>
+
+      <div className={`bg-secondary ${styles.flexStart}`}>
+        <div className={`${styles.boxWidth}`}>
           <Reviews />
+        </div>
+      </div>
+
+      <div className={`bg-white ${styles.flexStart}`}>
+        <div className={`${styles.boxWidth}`}>
           <Footer />
         </div>
       </div>
