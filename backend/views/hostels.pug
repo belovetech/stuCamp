@@ -1,0 +1,34 @@
+extends base
+
+block content 
+  main.main
+    .card-container
+      each hostel in hostels
+        .card.card_hostel
+          .card__header
+            .card__picture
+              .card__picture-overlay
+                img.card__picture-img(src=`/img/hostel/${hostel.imageCover}`, alt=`${hostel.name}`)
+            h3.heading-tertirary
+              span=hostel.name
+
+          .card__details
+            .card__details_box
+              h4.card__sub-heading=hostel.type
+              .card__data
+                svg.card__icon
+                  use(xlink:href='/img/icons.svg#icon-map-pin')
+                span=hostel.location
+            p.card__text=hostel.summary
+
+          .card__footer
+                p
+                  span.card__footer-value= `#${hostel.price}`
+                  | 
+                  span.card__footer-text per room
+                p.card__ratings
+                  span.card__footer-value=hostel.ratingsAverage
+                  | 
+                  span.card__footer-text=`rating (${hostel.ratingsQuantity})`
+                a.btn.btn--purple.btn--small(href=`/hostel/${hostel.slug}`) Details
+        

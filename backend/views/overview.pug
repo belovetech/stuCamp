@@ -1,0 +1,82 @@
+extends base
+include _reviewCard
+
+mixin reviewCard(user, name, text)
+  .review_card
+    img.reviews__card-img(src='/img/users/user.jpeg', alt="user's photo")
+    h6.reviews__user=user
+    span=name
+    span ⭐⭐⭐⭐⭐
+    p.reviews__text=text
+
+block content 
+  main.main 
+    .container
+      section.sec_left
+        .sec_left_content
+          h1 Rent home away from home Hostels
+          p StuCamp is an hostel management gency that lets you rent private hostels within your school community  from the web with no hassle of agents or caretakers. Our mission is to redefine accomodation experience for students who study far away from home, by making hostels accessible to everyone whether a fresher with low budget or staylite with bougie taste.
+          a.nav__el.nav__el--cta(href='/hostel') Explore More
+          .rev_container
+            .rev_content
+              span  +5k
+              p Customer service
+            .rev_content
+              span  +10k
+              p Student reviews
+            .rev_content
+              span  +15k
+              p 5 star rating on Play Store
+
+      section.sec_right
+        img(src='/img/hostel_2/faculty.png' alt='Stucamp logo')
+
+    form.form-search
+      p Search for your prefered apartment
+      .input_box
+        input#location.form__input(type='text', placeholder='location', name='location')
+        input#type.form__input(type='text', placeholder='type', name='type')
+        input#price.form__input(type='text', placeholder='price range', name='price range')
+        button#searchBtn.btn.btn--lightpurple Search
+
+
+    .most_popular_box 
+      h2=title
+      p People love these apartments because it gives an actual luxury experience
+    .center
+      .wrapper 
+        .inner 
+          each hostel in hostels
+            .card
+              img(src=`/img/hostel/${hostel.imageCover}` alt=`${hostel.name}`)
+              .content 
+                .top
+                  h1=hostel.name
+                  span=hostel.type 
+                  span=hostel.price
+                p=hostel.summary 
+                a.nav__el.btn.btn-small.btn--purple(href='/login') Book now              
+      .map
+        button.active.first 
+        button.second 
+        button.third
+
+    //- section.section-reviews
+    //-   .reviews
+    //-     each review in hostel.reviews
+    //-       +reviewCard(review)
+    .customer_review
+      p Customer's reviews
+      .reviews__box
+        +reviewCard('Abeeb Raheem', 'Arafims Hostel', 'Amazing!')
+        +reviewCard('Samuel Adebayo', 'King Hostel', ' Terrible!')
+        +reviewCard('Opeyemi Odebode', 'Queen Hostel', 'Great view with serene environment!')
+
+    .newsletter_box
+      h2 Newsletter
+      .newsletter_content
+        p.text Subscribe to our Newsletter to get updates about now available apartments and also for offers and discount or promos
+        form.newsletter-form
+          input.form__input.newsletter_input(type='text', placeholder='Enter your email address', name='email')
+          button.btn.btn--lightpurple Subscribe
+
