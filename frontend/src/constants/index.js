@@ -1,4 +1,4 @@
-import { abuja } from "../components";
+import { abuja, room1, people, review } from "../components/";
 
 
 export const navLinks = [
@@ -35,32 +35,44 @@ export const cities = [
     { name: 'Sokoto', href: '#', img: abuja, sites: '3' }
   ]
 
-// export const reviews = [
-//     {
-//       id: "reviews-1",
-//       content:
-//         "It was a home away from home experience",
-//       name: "Sultan",
-//       title: "Postgraduate Student of Ahmadu Bello University",
-//       img: people01,
-//     },
-//     {
-//       id: "reviews-2",
-//       content:
-//         "I had a great 4 years during my time at the apartment",
-//       name: "Abraham",
-//       title: "University of Benin student",
-//       img: people02,
-//     },
-//     {
-//       id: "reviews-3",
-//       content:
-//         "The customer service and support was amazing, I recomment stuCamp.",
-//       name: "Omolola",
-//       title: "University of Lagos student",
-//       img: people03,
-//     },
-//   ];
+export const reviews = [
+    {
+      id: "reviews-1",
+      content:
+        "It was a home away from home experience",
+      name: "Sultan",
+      school: "ABU",
+      title: "Postgraduate Student of Ahmadu Bello University",
+      img: people,
+      header: review,
+      stars: "5",
+      date: "16/02/2020"
+    },
+    {
+      id: "reviews-2",
+      content:
+        "I had a great 4 years during my time at the apartment",
+      name: "Abraham",
+      school: "UNIBEN",
+      title: "University of Benin student",
+      img: people,
+      header: review,
+      stars: "5",
+      date: "15/05/2022"
+    },
+    {
+      id: "reviews-3",
+      content:
+        "The customer service and support was great, I recommend stuCamp.",
+      name: "Omolola",
+      school: "UNILAG",
+      title: "University of Lagos student",
+      img: people,
+      header: review,
+      stars: "5",
+      date: "28/10/2022"
+    },
+  ];
 
 export const stats = [
   {
@@ -79,6 +91,29 @@ export const stats = [
     value: "+15k",
   },
 ];
+
+export const rooms = [
+  {
+    name: "En-Suite",
+    title: "Users",
+    img: room1
+  },
+  {
+    name: "Studio",
+    title: "Users",
+    img: room1
+  },
+  {
+    name: "Private room",
+    title: "Users",
+    img: room1
+  },
+  {
+    name: "Shared room",
+    title: "Users",
+    img: room1
+  },
+]
 
 //   export const socialMedia = [
 //     {
