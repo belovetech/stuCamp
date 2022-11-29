@@ -6,6 +6,7 @@ const styles = {
     active: "group inline-flex items-center rounded-md bg-white text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2",
     button: "ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-3xl border border-transparent bg-primary px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-primary_deep",
     button_secondary: "inline-flex items-center justify-center whitespace-nowrap rounded-3xl border-2 border-primary px-8 py-2 text-base font-medium text-primary shadow-sm hover:bg-primary hover:text-white",
+    button_white: "mx-8 w-full inline-flex items-center justify-center whitespace-nowrap rounded-3xl border-2 border-white py-2 text-base font-medium text-white shadow-sm hover:bg-white hover:text-primary",
     boxWidth: "xl:max-w-[1280px] w-full",
 
     heading2: "font-poppins font-semibold xs:text-[48px] text-[40px] text-white xs:leading-[76.8px] leading-[66.8px] w-full",
