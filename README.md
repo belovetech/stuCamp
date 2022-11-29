@@ -12,7 +12,7 @@
 
 
 # Introduction
-stuCamp is an hostel management platform. It help student find the best accommodation available within the least amount of time. Enabling students to run very specific searches and retrieve detailed information on accomodations that match their exact requirements.
+stuCamp is an hostel management platform. It help student find the best accommodation available within the least amount of time. Enabling students to run very specific searches and retrieve detailed information on accomodations that match their exact requirements. Student will be able to secure hostels according to their budget and in their preferred location without hassle and secure  accommodation  before resuming to school.
 
 ## Getting Started
 
