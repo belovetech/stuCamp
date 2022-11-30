@@ -1,11 +1,12 @@
 const Hostel = require('./../models/hostelModel');
+const Review = require('./../models/reviewModel');
 const catchAsync = require('./../utils/catchAsync');
 const APIfeatures = require('./../utils/apifeatures');
 
 exports.getOverview = catchAsync(async (req, res, next) => {
   req.query.limit = '5';
   req.query.sort = 'price,-ratingsAverage';
-  req.query.fields = 'name,price,type,summary,imageCover';
+  req.query.fields = 'name,price,type,summary,imageCover, slug';
 
   const features = new APIfeatures(Hostel.find(), req.query)
     .filter()
@@ -14,12 +15,13 @@ exports.getOverview = catchAsync(async (req, res, next) => {
     .paginate();
 
   const hostels = await features.query;
+  const reviews = await Review.find();
 
   res.status(200).render('overview', {
     title: 'Most popular',
     hostels,
+    reviews,
   });
-  next();
 });
 
 exports.getAllHostel = catchAsync(async (req, res, next) => {
@@ -42,3 +44,9 @@ exports.getHostel = catchAsync(async (req, res, next) => {
     hostel,
   });
 });
+
+exports.getLoginForm = (req, res) => {
+  res.status(200).render('login', {
+    title: 'Login into your account!',
+  });
+};
