@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const path = require('path');
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
 const mongoSanitizer = require('express-mongo-sanitize');
@@ -18,7 +19,15 @@ const viewRouter = require('./routes/viewRouter');
 // insantiate express app
 const app = express();
 
+// SET UP VIEW ENGINE
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'views'));
+
 // GLOBAL MIDDLEWARES
+
+// Serving static files
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Set security HTTP headers
 app.use(helmet());
 

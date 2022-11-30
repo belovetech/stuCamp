@@ -1,0 +1,31 @@
+doctype html
+html(lang="en")
+
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Stucamp | #{title}
+    link(rel='stylesheet', href='/css/styles.css')
+    link(rel="shortcut icon", type='image/png' href='/img/favicon.png', )
+    
+  body 
+    // HEADER
+    include _header
+    
+    // CONTENT
+    block content
+      h1 This is a placeholder
+    
+    // FOOTER
+    include _footer
+    
+    
+    script(src='/js/carousel.js')
+    //- script(src='/js/searchHostel.js')
+    
+
+    //- h1= hostel.toUpperCase()
+    //- - const location = 'Tanke'
+    //- h2= user
+    //- p=location

@@ -1,0 +1,65 @@
+extends base
+include _reviewCard
+
+block content
+  section.section-header
+    .header__hero
+      .header__hero-overlay &nbsp;
+        img.header__hero-img(src=`/img/hostel/${hostel.imageCover}`, alt=`${hostel.name}`)
+
+    .heading-box
+      h1.heading-primary
+        span= `${hostel.name}`
+
+  section.section-description
+    .overview-box
+      div
+        .overview-box__group
+          h1.heading-secondary.ma-bt-lg Quick facts
+          h3=`Name: ${hostel.name}`
+          h3=`Type: ${hostel.type}`
+          h3=`Price: ${hostel.price}`
+          h3=`Amenities:  ${hostel.summary}`
+          h3=`Rooms available:  ${hostel.roomsAvailable}`
+
+        .overview-box__group
+          h2.heading-secondary.ma-bt-lg= `Your hostel mate (${hostel.tenants.length})`
+          each tenant in hostel.tenants
+            .overview-box__detail
+              - if (tenant.photo)
+                img.overview-box__img(src=`/img/users/${tenant.photo}`, alt=`${tenant.name}`)
+              - else 
+                img.overview-box__img(src='/img/users/users.png', alt=`${tenant.name}`)
+              span.overview-box__label=tenant.name
+
+
+    .description-box
+      h2.heading-secondary.ma-bt-lg= `About ${hostel.name} Hostel`
+      - const parapraphs = hostel.description.split('\n');
+      each p in parapraphs
+        p.description__text= p
+
+  section.section-pictures
+    each img, i in hostel.images
+      .picture-box
+        img.picture-box__img(src=`/img/hostel/${img}`, alt=`${hostel.name} ${i + 1}`, class=`picture-box__img--${i + 1}`)
+
+  section.section-reviews
+    .reviews
+      each review in hostel.reviews
+        +reviewCard(review)
+
+  section.section-cta
+    .cta
+      .cta__img.cta__img--logo
+        img(src='/img/stucamp2.png', alt='Stucamp logo')
+      img.cta__img.cta__img--1(src=`/img/hostel/${hostel.images[1]}`, alt='Tour picture')
+      img.cta__img.cta__img--2(src=`/img/hostel/${hostel.images[2]}`, alt='Tour picture')
+      
+      .cta__content
+        h2.heading-secondary What are you waiting for?
+        p.cta__text= `${hostel.summary}`
+        if user
+          button.btn.btn--purple.span-all-rows#book-tour(data-tour-id=`${hostel.id}`) Book tour now!
+        else
+          a.btn.btn--purple.span-all-rows(href='/login') Log in to book hostel
