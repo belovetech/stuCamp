@@ -1,6 +1,7 @@
 import React from 'react'
 import Carousel from 'react-elastic-carousel';
 import styles from '../style';
+import { useRef } from "react";
 import Item from "./Item"
 import { reviews } from '../constants';
 import { next, prev } from './index';
@@ -9,22 +10,23 @@ const breakPoints = [
   { width: 1, itemsToShow: 1 },
   { width: 550, itemsToShow: 2 },
   { width: 768, itemsToShow: 3 },
-  { width: 1200, itemsToShow: 3 },
+  { width: 1200, itemsToShow: 4 },
 ]
 
 const Reviews = () =>  {
+  const carousel = useRef();
   return (
     <div className="my-10 sm:px-16 px-6">
         <h2 className="flex justify-between text-primary font-poppins font-semibold text-[50px]">Reviews
           <span>
-            <button onClick={() => this.carousel.slidePrev()}><img src={prev}/></button>
-            <button onClick={() => this.carousel.slideNext()}><img src={next}/></button>
+            <button onClick={() => carousel.slidePrev()}><img src={prev}/></button>
+            <button onClick={() => carousel.slideNext()}><img src={next}/></button>
           </span>
         </h2>
-        <Carousel breakPoints={breakPoints}
+        <Carousel ref={carousel} breakPoints={breakPoints}
+          itemsToScroll={3}
           itemPadding={[0, 260]}
-          enableAutoPlay
-          autoPlaySpeed={1500}
+          showEmptySlots
           easing="cubic-bezier(1,.15,.55,1.54)"
           tiltEasing="cubic-bezier(0.110, 1, 1.000, 0.210)"
           transitionMs={700}
