@@ -12,7 +12,7 @@ function classNames(...classes) {
 
 export default function Navbar() {
   return (
-    <Popover className="relative bg-white">
+    <Popover className="bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className={styles.navContainer}>
           <div className={styles.logoContainer}>
