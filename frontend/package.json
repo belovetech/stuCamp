@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^13.5.0",
     "framer-motion": "^7.6.7",
     "react": "^18.2.0",
+    "react-aria": "^3.11.0",
     "react-dom": "^18.2.0",
     "react-elastic-carousel": "^0.11.5",
     "react-scripts": "5.0.1",
@@ -17,8 +18,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-scripts --max_old_space_size=4096 start",
+    "build": "react-scripts --max_old_space_size=4096 build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
