@@ -6,7 +6,7 @@ import { Navbar, Stats, Hero, Search, Locations, Offers, Reviews, Footer
 const App = () =>  (
     <div className="w-full overflow-hidden">
 
-      <div className={`${styles.paddingX} ${styles.flexCenter}`}>
+      <div className={`t-0 sticky z-20 ${styles.paddingX} ${styles.flexCenter}`}>
         <div className={`${styles.boxWidth}`}>
           <Navbar />
         </div>

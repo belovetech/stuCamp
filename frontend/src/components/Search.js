@@ -3,7 +3,6 @@ import { badge } from './index';
 import SearchButton from './SearchButton';
 import { OverlayProvider, usePreventScroll } from 'react-aria';
 import Button from './Button'
-import SlideOver from './SlideOver';
 import HeadlessSlideOver from './HeadlessSlideOver';
 import SearchModal from './SearchModal';
 
