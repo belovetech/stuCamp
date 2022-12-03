@@ -1,20 +1,25 @@
 const path = require('path');
 
 module.exports = {
+    // module: {
+    //  rules: [
+    //     {
+    //       test: /\.(png|jpg|gif)$/i,
+    //       use: [
+    //         {
+    //           loader: 'file-loader',
+    //           options: {
+    //             limit: 18192,
+    //           }
+    //         },
+    //       ],
+    //      type: 'javascript/auto'
+    //     },
+    //  ]
+    // },
     module: {
-     rules: [
-        {
-          test: /\.(png|jpg|gif)$/i,
-          use: [
-            {
-              loader: 'file-loader',
-              options: {
-                limit: 8192,
-              }
-            },
-          ],
-         type: 'javascript/auto'
-        },
-     ]
-    },
+      loaders: [
+        { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' }
+      ]
+    }
   }

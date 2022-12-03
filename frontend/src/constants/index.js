@@ -1,4 +1,4 @@
-import { abuja, room1, people, review } from "../components/";
+import { abuja, room1, people, review, instagram, twitter, facebook, linkedin } from "../components/index";
 
 
 export const navLinks = [
@@ -115,25 +115,53 @@ export const rooms = [
   },
 ]
 
-//   export const socialMedia = [
-//     {
-//       id: "social-media-1",
-//       icon: instagram,
-//       link: "https://www.instagram.com/",
-//     },
-//     {
-//       id: "social-media-2",
-//       icon: facebook,
-//       link: "https://www.facebook.com/",
-//     },
-//     {
-//       id: "social-media-3",
-//       icon: twitter,
-//       link: "https://www.twitter.com/",
-//     },
-//     {
-//       id: "social-media-4",
-//       icon: linkedin,
-//       link: "https://www.linkedin.com/",
-//     },
-//   ];
+export const team = [
+  {
+    name: "Adebayo Samuel",
+    title: "Software Engineer",
+    img: "https://avatars.githubusercontent.com/u/62617476?v=4",
+    github: "https://github.com/Adebayo-S",
+    linkedin: "https://www.linkedin.com/in/adebayosamuel"
+  },
+  {
+    name: "Abeeb Raheem",
+    title: "Software Engineer",
+    img: "https://avatars.githubusercontent.com/u/66231101?v=4",
+    github: "https://github.com/belovetech",
+    linkedin: "https://www.linkedin.com/in/belovetech0211/"
+
+  },
+  {
+    name: "Opeyemi Odebode",
+    title: "Software Engineer",
+    img: "https://avatars.githubusercontent.com/u/31376475?v=4",
+    github: "https://github.com/surahj",
+    linkedin: "https://www.linkedin.com/in/surahj/"
+  }
+]
+  // export const socialMedia = [
+  //   {
+  //     id: "social-media-1",
+  //     icon: instagram,
+  //     name: "instagram",
+  //     link: "https://www.instagram.com/",
+  //   },
+  //   {
+  //     id: "social-media-2",
+  //     icon: facebook,
+  //     name: "facebook",
+  //     link: "https://www.facebook.com/",
+  //   },
+  //   {
+  //     id: "social-media-3",
+  //     icon: twitter,
+  //     name: "twitter",
+  //     link: "https://www.twitter.com/",
+  //   },
+  //   {
+  //     id: "social-media-4",
+  //     icon: linkedin,
+  //     name: "linkedin",
+  //     link: "https://www.linkedin.com/",
+  //   },
+  // ];

@@ -7,6 +7,8 @@ module.exports = {
       colors: {
         primary: "#89268B",
         primary_deep: "#631b64",
+        lock: "#d773d9",
+        lockdown: "#e8afe9",
         hero_text: "#3A3A3A",
         ash: "#f2f2f2",
         secondary: "#eac8e7",
