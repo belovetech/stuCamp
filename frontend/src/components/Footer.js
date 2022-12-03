@@ -17,7 +17,7 @@ const Footer = () => (
             <Partners />
             <Newsletter />
         </li>
-        <li className="font-poppins">
+        <li className="font-poppins text-[13px]">
           <span>&copy; 2022 STUCAMP LIMITED</span>
         </li>
       </ul>
