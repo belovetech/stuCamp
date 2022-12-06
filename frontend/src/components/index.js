@@ -17,7 +17,25 @@ import discount from '../assets/discount.svg';
 import search from '../assets/search.svg';
 import room from '../assets/room.jpg';
 import abuja from '../assets/abuja.jpg';
+import anambra from '../assets/anambra.jpg';
+import bayelsa from '../assets/bayelsa.jpg';
+import borno from '../assets/borno.jpg';
+import delta from '../assets/delta.jpg';
+import edo from '../assets/edo.jpg';
+import enugu from '../assets/enugu.jpg';
+import ibadan from '../assets/ibadan.jpg';
+import imo from '../assets/imo.jpg';
+import kano from '../assets/kano.jpg';
+import lagos from '../assets/lagos.jpg';
+import ondo from '../assets/ondo.jpg';
+import ogun from '../assets/ogun.jpg';
+import osun from '../assets/osun.jpg';
+import ph from '../assets/ph.jpg';
+import sokoto from '../assets/sokoto.jpg';
 import room1 from '../assets/room1.jpg';
+import room2 from '../assets/room2.jpg';
+import room3 from '../assets/room3.jpg';
+import room4 from '../assets/room4.jpg';
 import badge from '../assets/badge.svg';
 import badge_white from '../assets/badge_white.svg';
 import people from '../assets/people.jpeg';
@@ -47,8 +65,26 @@ export {
     badge,
     badge_white,
     abuja,
+    anambra,
+    bayelsa,
+    borno,
+    delta,
+    edo,
+    enugu,
+    ibadan,
+    imo,
+    kano,
+    lagos,
+    ondo,
+    ogun,
+    osun,
+    ph,
+    sokoto,
     location,
     room1,
+    room2,
+    room3,
+    room4,
     people,
     review,
     contact,
