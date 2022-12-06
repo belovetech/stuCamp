@@ -1,4 +1,4 @@
-import { abuja, room1, people, review, instagram, twitter, facebook, linkedin } from "../components/index";
+import { abuja, anambra, bayelsa, borno, delta, edo, enugu, imo, kano, lagos, ogun, ondo, osun, ibadan, ph, sokoto, room1, room2, room3, room4, people, review, instagram, twitter, facebook, linkedin } from "../components/";
 
 
 export const navLinks = [
@@ -18,21 +18,21 @@ export const navLinks = [
 
 export const cities = [
     { name: 'Abuja', href: '#', img: abuja, sites: '3' },
-    { name: 'Anambra', href: '#', img: abuja, sites: '3' },
-    { name: 'Bayelsa', href: '#', img: abuja, sites: '3' },
-    { name: 'Borno', href: '#', img: abuja, sites: '3' },
-    { name: 'Delta', href: '#', img: abuja, sites: '3' },
-    { name: 'Edo', href: '#', img: abuja, sites: '3' },
-    { name: 'Enugu', href: '#', img: abuja, sites: '3'},
-    { name: 'Imo', href: '#', img: abuja, sites: '3' },
-    { name: 'Kano', href: '#', img: abuja, sites: '3' },
-    { name: 'Lagos', href: '#', img: abuja, sites: '3' },
-    { name: 'Ogun', href: '#', img: abuja, sites: '3' },
-    { name: 'Ondo', href: '#', img: abuja, sites: '3' },
-    { name: 'Osun', href: '#', img: abuja, sites: '3' },
-    { name: 'Oyo', href: '#', img: abuja, sites: '3' },
-    { name: 'Rivers', href: '#', img: abuja, sites: '3' },
-    { name: 'Sokoto', href: '#', img: abuja, sites: '3' }
+    { name: 'Anambra', href: '#', img: anambra, sites: '3' },
+    { name: 'Bayelsa', href: '#', img: bayelsa, sites: '3' },
+    { name: 'Borno', href: '#', img: borno, sites: '3' },
+    { name: 'Delta', href: '#', img: delta, sites: '3' },
+    { name: 'Edo', href: '#', img: edo, sites: '3' },
+    { name: 'Enugu', href: '#', img: enugu, sites: '3'},
+    { name: 'Imo', href: '#', img: imo, sites: '3' },
+    { name: 'Kano', href: '#', img: kano, sites: '3' },
+    { name: 'Lagos', href: '#', img: lagos, sites: '3' },
+    { name: 'Ogun', href: '#', img: ogun, sites: '3' },
+    { name: 'Ondo', href: '#', img: ondo, sites: '3' },
+    { name: 'Osun', href: '#', img: osun, sites: '3' },
+    { name: 'Ibadan', href: '#', img: ibadan, sites: '3' },
+    { name: 'PH City', href: '#', img: ph, sites: '3' },
+    { name: 'Sokoto', href: '#', img: sokoto, sites: '3' }
   ]
 
 export const reviews = [
@@ -101,17 +101,17 @@ export const rooms = [
   {
     name: "Studio",
     title: "Users",
-    img: room1
+    img: room2
   },
   {
     name: "Private room",
     title: "Users",
-    img: room1
+    img: room3
   },
   {
     name: "Shared room",
     title: "Users",
-    img: room1
+    img: room4
   },
 ]
 
@@ -139,29 +139,30 @@ export const team = [
     linkedin: "https://www.linkedin.com/in/surahj/"
   }
 ]
-  // export const socialMedia = [
-  //   {
-  //     id: "social-media-1",
-  //     icon: instagram,
-  //     name: "instagram",
-  //     link: "https://www.instagram.com/",
-  //   },
-  //   {
-  //     id: "social-media-2",
-  //     icon: facebook,
-  //     name: "facebook",
-  //     link: "https://www.facebook.com/",
-  //   },
-  //   {
-  //     id: "social-media-3",
-  //     icon: twitter,
-  //     name: "twitter",
-  //     link: "https://www.twitter.com/",
-  //   },
-  //   {
-  //     id: "social-media-4",
-  //     icon: linkedin,
-  //     name: "linkedin",
-  //     link: "https://www.linkedin.com/",
-  //   },
-  // ];
+
+export const socialMedia = [
+  {
+    id: "social-media-1",
+    icon: instagram,
+    name: "instagram",
+    link: "https://www.instagram.com/",
+  },
+  {
+    id: "social-media-2",
+    icon: facebook,
+    name: "facebook",
+    link: "https://www.facebook.com/",
+  },
+  {
+    id: "social-media-3",
+    icon: twitter,
+    name: "twitter",
+    link: "https://www.twitter.com/",
+  },
+  {
+    id: "social-media-4",
+    icon: linkedin,
+    name: "linkedin",
+    link: "https://www.linkedin.com/",
+  },
+];
