@@ -1,5 +1,38 @@
-import { abuja, anambra, bayelsa, borno, delta, edo, enugu, imo, kano, lagos, ogun, ondo, osun, ibadan, ph, sokoto, room1, room2, room3, room4, people, review, instagram, twitter, facebook, linkedin } from "../components/";
+import { abuja, anambra, bayelsa, borno, delta, edo, enugu, imo, kano, lagos, ogun, ondo, osun, ibadan, ph, sokoto, room1, room2, room3, room4, people1, people2, people3, review1, review2, review3, instagram, twitter, facebook, linkedin } from "../assets/index";
 
+export const CREATE = 'CREATE';
+export const UPDATE = 'UPDATE';
+export const DELETE = 'DELETE';
+export const FETCH_ALL = 'FETCH_ALL';
+
+
+console.log(abuja);
+export const socialMedia = [
+  {
+    id: "social-media-1",
+    icon: instagram,
+    name: "instagram",
+    link: "https://www.instagram.com/",
+  },
+  {
+    id: "social-media-2",
+    icon: facebook,
+    name: "facebook",
+    link: "https://www.facebook.com/",
+  },
+  {
+    id: "social-media-3",
+    icon: twitter,
+    name: "twitter",
+    link: "https://www.twitter.com/",
+  },
+  {
+    id: "social-media-4",
+    icon: linkedin,
+    name: "linkedin",
+    link: "https://www.linkedin.com/",
+  },
+]
 
 export const navLinks = [
     {
@@ -43,8 +76,8 @@ export const reviews = [
       name: "Sultan",
       school: "ABU",
       title: "Postgraduate Student of Ahmadu Bello University",
-      img: people,
-      header: review,
+      img: people1,
+      header: review1,
       stars: "5",
       date: "16/02/2020"
     },
@@ -55,8 +88,8 @@ export const reviews = [
       name: "Abraham",
       school: "UNIBEN",
       title: "University of Benin student",
-      img: people,
-      header: review,
+      img: people2,
+      header: review2,
       stars: "5",
       date: "15/05/2022"
     },
@@ -67,8 +100,8 @@ export const reviews = [
       name: "Omolola",
       school: "UNILAG",
       title: "University of Lagos student",
-      img: people,
-      header: review,
+      img: people3,
+      header: review3,
       stars: "5",
       date: "28/10/2022"
     },
@@ -140,29 +173,3 @@ export const team = [
   }
 ]
 
-export const socialMedia = [
-  {
-    id: "social-media-1",
-    icon: instagram,
-    name: "instagram",
-    link: "https://www.instagram.com/",
-  },
-  {
-    id: "social-media-2",
-    icon: facebook,
-    name: "facebook",
-    link: "https://www.facebook.com/",
-  },
-  {
-    id: "social-media-3",
-    icon: twitter,
-    name: "twitter",
-    link: "https://www.twitter.com/",
-  },
-  {
-    id: "social-media-4",
-    icon: linkedin,
-    name: "linkedin",
-    link: "https://www.linkedin.com/",
-  },
-];
