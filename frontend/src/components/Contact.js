@@ -1,6 +1,6 @@
 import styles from '../style'
 import { Link } from 'react-router-dom'
-import { contact } from './index.js'
+import { contact } from '../assets'
 
 const Contact = () => (
   <section id="home" className={`bg-secondary`}>

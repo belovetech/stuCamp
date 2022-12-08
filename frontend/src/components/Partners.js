@@ -1,5 +1,5 @@
 import React from 'react'
-import { alx, airbnb, holberton } from './index';
+import { alx, airbnb, holberton } from '../assets';
 
 const Partners = () => {
   return (

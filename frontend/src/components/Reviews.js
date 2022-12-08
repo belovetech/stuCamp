@@ -4,7 +4,7 @@ import styles from '../style';
 import { useRef } from "react";
 import Item from "./Item"
 import { reviews } from '../constants';
-import { next, prev } from './index';
+import { next, prev } from '../assets';
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -42,8 +42,8 @@ const Reviews = () =>  {
                 </div>
 
                 <div className="flex flex-wrap justify-between bottom-0 h-[50px]">
-                  <span className="">{[...Array(parseInt(review.stars))].map((star) => (
-                    <span key={star}>⭐️</span>
+                  <span className="">{[...Array(parseInt(review.stars))].map((star, idx) => (
+                    <span key={idx}>⭐️</span>
                   ))}
                   </span>
                   <img className="z-20 absolute ml-[12%] -bottom-0 rounded-full w-[100px] h-[100px]" src={review.img} alt={review.name} />

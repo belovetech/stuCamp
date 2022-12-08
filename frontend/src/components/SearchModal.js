@@ -1,4 +1,4 @@
-import { search } from './index.js';
+import { search } from '../assets';
 import { cities } from '../constants'
 import { useState } from 'react';
 

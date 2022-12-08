@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { cities } from "../constants";
-import { location } from './index.js';
+import { location } from '../assets';
 
 const Locations = () => {
   const [width, setWidth] = useState(0);

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { badge } from './index';
+import { badge } from '../assets';
 import SearchButton from './SearchButton';
 import { OverlayProvider, usePreventScroll } from 'react-aria';
 import Button from './Button'
@@ -7,12 +7,8 @@ import HeadlessSlideOver from './HeadlessSlideOver';
 import SearchModal from './SearchModal';
 
 const Search = () => {
-    const [isOpen, setIsOpen] = useState(false);
     const [open, setOpen] = useState(false);
 
-    const handleOnClose = () => setIsOpen(false);
-
-    usePreventScroll({ isDisabled: !isOpen });
     return (
         <OverlayProvider>
     <div className="sm:pl-16 px-6 flex flex-wrap">

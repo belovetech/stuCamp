@@ -1,4 +1,4 @@
-import { mail } from './index';
+import { mail } from '../assets';
 
 export default function Example() {
   return (
