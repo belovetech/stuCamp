@@ -4,7 +4,7 @@ include _reviewCard
 block content
   section.section-header
     .header__hero
-      .header__hero-overlay &nbsp;
+      .header__hero-overlay
         img.header__hero-img(src=`/img/hostel/${hostel.imageCover}`, alt=`${hostel.name}`)
 
     .heading-box
@@ -16,11 +16,11 @@ block content
       div
         .overview-box__group
           h1.heading-secondary.ma-bt-lg Quick facts
-          h3=`Name: ${hostel.name}`
-          h3=`Type: ${hostel.type}`
-          h3=`Price: ${hostel.price}`
-          h3=`Amenities:  ${hostel.summary}`
-          h3=`Rooms available:  ${hostel.roomsAvailable}`
+          p.quick_fact__text=`Name: ${hostel.name}`
+          p.quick_fact__text=`Type: ${hostel.type}`
+          p.quick_fact__text=`Price: #${hostel.price}`
+          p.quick_fact__text=`Amenities:  ${hostel.summary}`
+          p.quick_fact__text=`Rooms available:  ${hostel.roomsAvailable}`
 
         .overview-box__group
           h2.heading-secondary.ma-bt-lg= `Your hostel mate (${hostel.tenants.length})`
@@ -34,7 +34,7 @@ block content
 
 
     .description-box
-      h2.heading-secondary.ma-bt-lg= `About ${hostel.name} Hostel`
+      h2.heading-secondary.ma-bt-lg= `About ${hostel.name}`
       - const parapraphs = hostel.description.split('\n');
       each p in parapraphs
         p.description__text= p

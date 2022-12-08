@@ -8,75 +8,103 @@ mixin reviewCard(user, name, text)
     span=name
     span ⭐⭐⭐⭐⭐
     p.reviews__text=text
+    
+mixin exclusiveCard(image, name, text)
+  .card.card_hostel
+    .card__header
+      .card__picture
+        .card__picture-overlay
+          img.card__picture-img(src=`/img/hostel/${image}`, alt=`${name}`)
+      h3.heading-tertirary
+        span=name
+
+    .card__details
+      p.card__text=text
 
 block content 
   main.main 
-    .container
-      section.sec_left
-        .sec_left_content
-          h1 Rent home away from home Hostels
-          p StuCamp is an hostel management gency that lets you rent private hostels within your school community  from the web with no hassle of agents or caretakers. Our mission is to redefine accomodation experience for students who study far away from home, by making hostels accessible to everyone whether a fresher with low budget or staylite with bougie taste.
-          a.nav__el.nav__el--cta(href='/hostel') Explore More
-          .rev_container
-            .rev_content
-              span  +5k
-              p Customer service
-            .rev_content
-              span  +10k
-              p Student reviews
-            .rev_content
-              span  +15k
-              p 5 star rating on Play Store
+  .container
+    section.sec_left
+      .sec_left_content
+        h1#about_us Rent home away from home Hostels
+        p StuCamp is an hostel management gency that lets you rent private hostels within your school community  from the web with no hassle of agents or caretakers. Our mission is to redefine accomodation experience for students who study far away from home, by making hostels accessible to everyone whether a fresher with low budget or staylite with bougie taste.
+        a.nav__el.nav__el--cta(href='/hostel') Explore More
+        .rev_container
+          .rev_content
+            span  +5k
+            p Customer service
+          .rev_content
+            span  +10k
+            p Student reviews
+          .rev_content
+            span  +15k
+            p 5 star rating on Play Store
 
-      section.sec_right
-        img(src='/img/hostel_2/faculty.png' alt='Stucamp logo')
+    section.sec_right
+      img(src='/img/hostel_2/faculty.png' alt='Stucamp logo')
 
-    form.form-search
-      p Search for your prefered apartment
-      .input_box
-        input#location.form__input(type='text', placeholder='location', name='location')
-        input#type.form__input(type='text', placeholder='type', name='type')
-        input#price.form__input(type='text', placeholder='price range', name='price range')
-        button#searchBtn.btn.btn--lightpurple Search
+  form.form-search
+    p Search for your prefered apartment
+    .input_box
+      input#location.form__input(type='text', placeholder='location', name='location')
+      input#type.form__input(type='text', placeholder='type', name='type')
+      input#price.form__input(type='text', placeholder='price range', name='price range')
+      button#searchBtn.btn.btn--lightpurple Search
 
 
-    .most_popular_box 
-      h2=title
-      p People love these apartments because it gives an actual luxury experience
-    .center
-      .wrapper 
-        .inner 
-          each hostel in hostels
-            .card
-              img(src=`/img/hostel/${hostel.imageCover}` alt=`${hostel.name}`)
-              .content 
-                .top
-                  h1=hostel.name
-                  span=hostel.type 
-                  span=hostel.price
-                p=hostel.summary 
-                a.nav__el.btn.btn-small.btn--purple(href='/login') Book now              
+  //- .most_popular_box
+  .most_popular_box
+    h1.most_popular_text=title
+    p People love these apartments because it gives an actual luxury experience
+    .card-container
+      .center
+        .wrapper 
+          .inner 
+            each hostel in hostels
+              .card
+                img(src=`/img/hostel/${hostel.imageCover}` alt=`${hostel.name}`)
+                .content 
+                  .top
+                    h1=hostel.name
+                    span=hostel.type 
+                    span=`#${hostel.price}`
+                  p=hostel.summary
+                  a.nav__el.btn.btn-small.btn--purple(href=`/hostel/${hostel.slug}`) Details              
       .map
         button.active.first 
         button.second 
         button.third
 
-    //- section.section-reviews
-    //-   .reviews
-    //-     each review in hostel.reviews
-    //-       +reviewCard(review)
-    .customer_review
-      p Customer's reviews
-      .reviews__box
-        +reviewCard('Abeeb Raheem', 'Arafims Hostel', 'Amazing!')
-        +reviewCard('Samuel Adebayo', 'King Hostel', ' Terrible!')
-        +reviewCard('Opeyemi Odebode', 'Queen Hostel', 'Great view with serene environment!')
+  //- section.section-reviews
+  //-   .reviews
+  //-     each review in hostel.reviews
+  //-       +reviewCard(review)
+  .customer_review
+    h1 Customer's reviews
+    .reviews__box
+      +reviewCard('Abeeb Raheem', 'Arafims Hostel', 'Amazing!')
+      +reviewCard('Samuel Adebayo', 'King Hostel', ' Terrible!')
+      +reviewCard('Opeyemi Odebode', 'Queen Hostel', 'Great view with serene environment!')
+      
+      
+  main.main
+    h1.exclusive_text Exclusive Offers and packages
+    .card-container
+      - const text1 = 'All of our Hostels have a private swimming pool where you can relax with friends and have some fun while unwinding..';
+      - const text2 = 'There are also common rooms for playing several types of games in most of our Hostels all around the country';
+      - const text3 = 'All our apartments have very comfortable and well spaced bedroom for your maximum comfort..';
+      - const text4 = 'The Hostels at Sanrab axis have a common room where you can have a get together with friends or even family reunion';
+      +exclusiveCard('exclusive-1.jpg', 'Swimming Pool', text1)
+      +exclusiveCard('exclusive-2.jpg', 'Sport Room', text2)
+      +exclusiveCard('exclusive-3.jpg', 'Spaced Bedroom', text3)
+      +exclusiveCard('exclusive-4.jpg', 'Swimming Pool', text4)
 
-    .newsletter_box
-      h2 Newsletter
-      .newsletter_content
-        p.text Subscribe to our Newsletter to get updates about now available apartments and also for offers and discount or promos
-        form.newsletter-form
-          input.form__input.newsletter_input(type='text', placeholder='Enter your email address', name='email')
-          button.btn.btn--lightpurple Subscribe
+
+  .newsletter_box
+    h2 Newsletter
+    .newsletter_content
+      p.text Subscribe to our Newsletter to get updates about now available apartments and also for offers and discount or promos
+      form.newsletter-form
+        input.form__input.newsletter_input(type='text', placeholder='Enter your email address', name='email')
+        button.btn.btn--lightpurple Subscribe
 

@@ -1,5 +1,3 @@
-// https://colorlib.com/preview/theme/seogo/
-
 const buttonsWrapper = document.querySelector('.map');
 const slides = document.querySelector('.inner');
 
