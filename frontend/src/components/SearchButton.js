@@ -1,4 +1,4 @@
-import { search } from './index.js';
+import { search } from '../assets';
 
 const SearchButton = () => (
     <button className="flex bg-white text-tertiary rounded-3xl px-8 py-2">

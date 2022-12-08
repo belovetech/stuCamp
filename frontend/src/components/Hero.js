@@ -1,5 +1,5 @@
 import styles from '../style';
-import { discount, room } from './index.js';
+import { discount, room } from '../assets';
 import GetStarted from './GetStarted.js';
 
 

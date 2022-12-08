@@ -13,7 +13,7 @@ const Footer = () => (
         <li className="border-b my-4">
           <Cities />
         </li>
-        <li className="border-b my-4 flex justify-between items-center">
+        <li className="border-b my-4 flex flex-col sm:flex-row justify-between items-center">
             <Partners />
             <Newsletter />
         </li>

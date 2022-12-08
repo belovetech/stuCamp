@@ -1,6 +1,6 @@
 import styles from '../style'
 import { Link } from 'react-router-dom'
-import { about, linkedin2, github } from './index.js'
+import { about, linkedin2, github } from '../assets'
 import { team } from '../constants';
 
 const About = () => (

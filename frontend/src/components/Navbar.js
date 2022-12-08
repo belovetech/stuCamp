@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
 import styles from '../style'
-import { logo } from './index.js'
+import { logo, avatar } from '../assets'
 import { cities } from '../constants'
 import { Popover, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
@@ -13,6 +13,8 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
+  const user = null;
+
   return (
       <Popover className="bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -97,12 +99,21 @@ export default function Navbar() {
               </Popover>
             </Popover.Group>
             <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
+              {user ? (
+                <Link
+                to="/user">
+                  <img src={user.result.imageUrl ?
+                      user.result.imageUrl :
+                    avatar } alt={user.result.name} />
+                </Link>
+              ) : (
               <Link
-                to="/signin"
+                to="/auth"
                 className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900"
               >
                 Sign in
               </Link>
+              )}
               <Link to="/book" className={styles.button}>
                 Book with confidence
               </Link>

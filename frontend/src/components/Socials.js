@@ -1,6 +1,6 @@
 import React from 'react';
-import { badge_white } from './index';
-// import { socialMedia } from '../constants';
+import { badge_white } from '../assets';
+import { socialMedia } from '../constants';
 
 const Socials = () => (
     <div className="flex justify-between items-center">
@@ -12,9 +12,9 @@ const Socials = () => (
             </span>
         </div>
         <div className="flex justify-between">
-            {/* {socialMedia.map((medium) => (
+            {socialMedia.map((medium) => (
                 <span className="ml-4" key={medium.id}><a href={medium.link}><img className="w-7 h-7" src={medium.icon} alt={medium.name} /></a></span>
-            ))} */}
+            ))}
         </div>
     </div>
   )

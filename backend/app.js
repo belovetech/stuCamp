@@ -6,7 +6,16 @@ const helmet = require('helmet');
 const mongoSanitizer = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const hpp = require('hpp');
+const cors = require('cors');
+
+const corsOptions ={
+  origin:'*',
+  credentials:true,   //access-control-allow-credentials:true
+  optionSuccessStatus:200,
+}
+
 const cookieParser = require('cookie-parser');
+
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
@@ -21,10 +30,13 @@ const viewRouter = require('./routes/viewRouter');
 const app = express();
 
 // SET UP VIEW ENGINE
-app.set('view engine', 'pug');
-app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'pug');
+// app.set('views', path.join(__dirname, 'views'));
 
 // GLOBAL MIDDLEWARES
+
+//CORS
+app.use(cors(corsOptions))
 
 // Serving static files
 app.use(express.static(path.join(__dirname, 'public')));

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { cities } from "../constants";
-import { location } from './index.js';
+import { location } from '../assets';
 
 const Locations = () => {
   const [width, setWidth] = useState(0);
@@ -18,7 +18,7 @@ const Locations = () => {
         <motion.div drag="x" dragConstraints={{right: 0, left: -width }} className="flex">
           {cities.map(city => (
             <motion.div className="mx-2" key={city.name}>
-              <div className={`w-[255px] h-[144px] rounded-xl bg-contain`} style={{backgroundImage: `url(${city.img})`}}>
+              <div className={`w-[255px] h-[144px] rounded-xl bg-cover`} style={{backgroundImage: `url(${city.img})`}}>
                 <div className="inline-flex ml-4 px-3 py-2 rounded-xl flex-wrap bg-white my-[90px] w-auto">
                   <img src={location} alt="location icon" />
                   <span className="ml-1 font-poppins font-normal text-[12px]">{city.sites}</span>
